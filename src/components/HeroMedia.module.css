@@ -1,0 +1,8 @@
+.video {
+  opacity: 0;
+  transition: opacity 1100ms ease;
+}
+
+.videoVisible {
+  opacity: 1;
+}

@@ -1,0 +1,327 @@
+.container {
+  width: min(100% - (var(--gutter) * 2), var(--container));
+  margin: 0 auto;
+}
+
+.wideContainer {
+  width: min(100% - (var(--gutter) * 2), var(--container-wide));
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--section) 0;
+}
+
+.sectionTight {
+  padding: var(--section-tight) 0;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--context-accent, var(--color-accent));
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.sectionHeadingText {
+  max-width: 720px;
+}
+
+.sectionHeading h2,
+.simpleHeading h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.simpleHeading p,
+.sectionHeading p {
+  margin: 14px 0 0;
+  color: var(--context-muted, var(--color-muted));
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.simpleHeading .eyebrow,
+.sectionHeading .eyebrow {
+  color: var(--context-accent, var(--color-accent));
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.button,
+.buttonSecondary,
+.buttonDark {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  padding: 13px 22px;
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    color var(--duration-fast) ease,
+    transform 140ms var(--ease-out);
+}
+
+.button:active,
+.buttonSecondary:active,
+.buttonDark:active {
+  transform: scale(0.97);
+}
+
+.button:focus-visible:active,
+.buttonSecondary:focus-visible:active,
+.buttonDark:focus-visible:active {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:active,
+  .buttonSecondary:active,
+  .buttonDark:active {
+    transform: none;
+  }
+
+  .inlineLink {
+    transition: none;
+  }
+}
+
+.button {
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.button:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #fff;
+}
+
+.buttonSecondary {
+  border: 1px solid var(--color-line);
+  color: var(--color-ink);
+}
+
+.buttonSecondary:hover {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.buttonDark {
+  border: 1px solid var(--color-dark-line);
+  color: var(--color-paper);
+}
+
+.buttonDark:hover {
+  border-color: var(--color-paper);
+  color: var(--color-paper);
+}
+
+.inlineLink {
+  color: var(--context-link, var(--color-ink));
+  padding-bottom: 2px;
+  font-weight: 800;
+  text-decoration: none;
+  background-image:
+    linear-gradient(
+      var(--context-link-hover-line, var(--color-accent-dark)),
+      var(--context-link-hover-line, var(--color-accent-dark))
+    ),
+    linear-gradient(
+      var(--context-link-line, var(--color-accent)),
+      var(--context-link-line, var(--color-accent))
+    );
+  background-position:
+    0 100%,
+    0 100%;
+  background-repeat: no-repeat;
+  background-size:
+    0 2px,
+    100% 2px;
+  transition: background-size 240ms var(--ease-out);
+}
+
+.inlineLink:hover {
+  background-size:
+    100% 2px,
+    100% 2px;
+}
+
+.confirmBadge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px dashed var(--color-confirm-border);
+  border-radius: 3px;
+  background: var(--color-confirm-bg);
+  color: var(--color-confirm-text);
+  padding: 3px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid var(--context-accent, var(--color-accent));
+  border-radius: 3px;
+  color: var(--context-accent, var(--color-accent));
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #211d18 0 12px,
+      #282319 12px 24px
+    );
+  color: var(--color-subtle);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+}
+
+.mediaLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: rgba(245, 242, 236, 0.72);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mapFrame {
+  width: 100%;
+  min-height: 360px;
+  border: 1px solid var(--color-line);
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #dcd7cc 0 14px,
+      #e4dfd4 14px 28px
+    );
+}
+
+.darkBand {
+  --context-accent: var(--color-accent-on-dark);
+  --context-link: var(--color-paper);
+  --context-link-hover-line: var(--color-paper);
+  --context-link-line: var(--color-accent-on-dark);
+  --context-muted: var(--color-light-muted);
+
+  background: var(--color-dark);
+  color: var(--color-paper);
+}
+
+.ctaBand {
+  --context-accent: var(--color-accent-on-dark);
+  --context-link: var(--color-paper);
+  --context-link-hover-line: var(--color-paper);
+  --context-link-line: var(--color-accent-on-dark);
+  --context-muted: var(--color-light-muted);
+
+  position: relative;
+  overflow: hidden;
+  background: var(--color-dark);
+  color: var(--color-paper);
+  padding: clamp(56px, 8vw, 104px) 0;
+  text-align: center;
+}
+
+.ctaBand h2 {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.ctaBand p {
+  margin: 16px auto 0;
+  max-width: 560px;
+  color: var(--color-light-muted);
+  line-height: 1.65;
+}
+
+.ctaBand .buttonRow {
+  justify-content: center;
+}
+
+.jpMark {
+  color: var(--context-accent, var(--color-accent));
+  font-family: var(--font-serif-jp);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+@media (max-width: 760px) {
+  .sectionHeading {
+    display: block;
+  }
+
+  .sectionHeading :global(.action) {
+    margin-top: 18px;
+  }
+
+  .button,
+  .buttonSecondary,
+  .buttonDark {
+    width: 100%;
+  }
+
+  .buttonRow {
+    width: 100%;
+  }
+
+  .mapFrame {
+    min-height: 260px;
+  }
+}

@@ -1,0 +1,190 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  min-width: 320px;
+  padding: max(24px, env(safe-area-inset-top))
+    max(24px, env(safe-area-inset-right))
+    max(24px, env(safe-area-inset-bottom))
+    max(24px, env(safe-area-inset-left));
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 140ms var(--ease-out),
+    visibility 0s linear 140ms;
+}
+
+.visible,
+.exiting {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.exiting {
+  opacity: 0;
+}
+
+.mark {
+  position: relative;
+  width: clamp(72px, 7vw, 96px);
+  aspect-ratio: 69.32 / 198.33;
+  overflow: hidden;
+}
+
+.ink,
+.logoPiece {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ink {
+  background: var(--color-dark);
+  -webkit-mask: url("/logos/mushinkan-logo-v.svg") center / contain no-repeat;
+  mask: url("/logos/mushinkan-logo-v.svg") center / contain no-repeat;
+  opacity: 0;
+  transform: scaleX(0.94);
+  transform-origin: center top;
+}
+
+.ink::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: #fff;
+  transform: translateY(-1%);
+}
+
+.logoPiece {
+  object-fit: contain;
+  opacity: 0;
+  transform: translateY(4px) scale(0.985);
+  transform-origin: center;
+}
+
+.symbol {
+  clip-path: inset(5% 5% 66% 5%);
+}
+
+.mu {
+  clip-path: inset(33% 29% 44% 6%);
+}
+
+.shin {
+  clip-path: inset(52% 5% 24% 6%);
+}
+
+.kan {
+  clip-path: inset(73% 5% 4% 6%);
+}
+
+.seal {
+  clip-path: inset(32% 6% 43% 70%);
+}
+
+.visible .ink {
+  animation: inkIn 180ms var(--ease-in-out) both;
+}
+
+.visible .ink::after {
+  animation: brushWipe 180ms var(--ease-in-out) both;
+}
+
+.visible .symbol {
+  animation: markIn 140ms var(--ease-out) 90ms both;
+}
+
+.visible .mu {
+  animation: markIn 140ms var(--ease-out) 135ms both;
+}
+
+.visible .shin {
+  animation: markIn 140ms var(--ease-out) 175ms both;
+}
+
+.visible .kan {
+  animation: markIn 140ms var(--ease-out) 215ms both;
+}
+
+.visible .seal {
+  animation: markIn 150ms var(--ease-out) 250ms both;
+}
+
+@keyframes inkIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes brushWipe {
+  from {
+    transform: translateY(-1%);
+  }
+  to {
+    transform: translateY(102%);
+  }
+}
+
+@keyframes markIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .mark {
+    width: clamp(66px, 20vw, 82px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    transition-duration: 100ms;
+  }
+
+  .visible .ink,
+  .visible .logoPiece {
+    animation: reducedMarkIn 100ms ease-out both;
+    animation-delay: 0ms;
+  }
+
+  .visible .ink {
+    transform: none;
+  }
+
+  .visible .ink::after {
+    animation: none;
+    transform: translateY(102%);
+  }
+
+  @keyframes reducedMarkIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

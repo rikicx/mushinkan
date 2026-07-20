@@ -1,0 +1,126 @@
+.actions {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 45;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 160ms var(--ease-out),
+    transform 200ms var(--ease-out),
+    visibility 0s linear 200ms;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.backToTop,
+.whatsapp {
+  border: 1px solid rgba(245, 242, 236, 0.18);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 28px rgba(20, 17, 14, 0.2);
+  color: var(--color-paper);
+  text-decoration: none;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition:
+    background-color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    transform 140ms var(--ease-out);
+}
+
+.backToTop {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  padding: 0;
+  border-color: rgba(20, 17, 14, 0.12);
+  background: rgba(255, 253, 248, 0.96);
+  box-shadow:
+    0 10px 28px rgba(20, 17, 14, 0.24),
+    0 1px 3px rgba(20, 17, 14, 0.18);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.backToTop:hover {
+  border-color: rgba(20, 17, 14, 0.22);
+  background: #fff;
+}
+
+.whatsapp {
+  display: none;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(31, 122, 51, 0.94);
+  padding: 0;
+}
+
+.whatsapp:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: #19672b;
+  color: #fff;
+}
+
+.backToTop:active,
+.whatsapp:active {
+  transform: scale(0.96);
+}
+
+.whatsapp:focus-visible {
+  outline: 2px solid var(--color-paper);
+  outline-offset: 3px;
+}
+
+.backToTop:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.backToTop:focus-visible:active,
+.whatsapp:focus-visible:active {
+  transform: none;
+}
+
+@media (max-width: 760px) {
+  .actions {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+  }
+
+  .whatsapp {
+    display: inline-flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .actions {
+    transform: none;
+    transition:
+      opacity 100ms linear,
+      visibility 0s linear 100ms;
+  }
+
+  .visible {
+    transition-delay: 0s;
+  }
+
+  .backToTop,
+  .whatsapp {
+    transition: none;
+  }
+}

@@ -1,0 +1,206 @@
+.classGrid,
+.senseiGrid,
+.contentGrid {
+  display: grid;
+  gap: 20px;
+}
+
+.classGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.classImage {
+  height: 300px;
+}
+
+.senseiGrid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.contentGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border: 1px solid var(--color-line-soft);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.cardBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.22;
+}
+
+.meta {
+  color: var(--color-accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.58;
+}
+
+.small {
+  margin-top: auto;
+  color: var(--color-subtle);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.senseiImage {
+  height: 180px;
+}
+
+.contentImage {
+  height: 170px;
+}
+
+.postMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.postDate {
+  color: var(--color-subtle);
+  font-size: 0.78rem;
+}
+
+.featuredSensei {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) 1fr;
+  border: 1px solid var(--color-line-soft);
+  background: var(--color-surface);
+}
+
+.featuredSenseiBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 44px);
+}
+
+.featuredSenseiBody h3 {
+  margin: 0;
+  font-size: clamp(1.65rem, 3vw, 2rem);
+  font-weight: 900;
+}
+
+.featuredSenseiBody p {
+  margin: 16px 0 0;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+.featuredSenseiBody .personLabel,
+.card .personLabel {
+  margin: 0 0 6px;
+  color: var(--color-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.leadGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.leadCard {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+}
+
+.leadImage {
+  height: 100%;
+  min-height: 300px;
+}
+
+.leadBody {
+  justify-content: center;
+  padding: clamp(22px, 3vw, 32px);
+}
+
+@media (max-width: 960px) {
+  .classGrid,
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .senseiGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .leadGrid,
+  .featuredSensei {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .leadCard {
+    grid-template-columns: minmax(112px, 2fr) minmax(0, 3fr);
+  }
+
+  .leadImage {
+    min-height: 280px;
+  }
+
+  .leadBody {
+    gap: 8px;
+    padding: 18px;
+  }
+
+  .leadCard h3 {
+    font-size: 1.08rem;
+  }
+
+  .leadCard p {
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 370px) {
+  .leadCard {
+    grid-template-columns: minmax(104px, 2fr) minmax(0, 3fr);
+  }
+
+  .leadBody {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 560px) {
+  .senseiGrid {
+    grid-template-columns: 1fr;
+  }
+}
