@@ -119,3 +119,28 @@
     text-align: left;
   }
 }
+
+@media (max-width: 640px) {
+  .inner {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .inner > :first-child {
+    text-align: center;
+  }
+
+  .logo {
+    margin-inline: auto;
+  }
+
+  .column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .credit {
+    justify-self: center;
+    text-align: center;
+  }
+}

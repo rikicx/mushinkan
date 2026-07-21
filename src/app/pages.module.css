@@ -1140,6 +1140,22 @@
 }
 
 @media (max-width: 640px) {
+  .firstLessonGrid .step {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .firstLessonGrid .stepNumber {
+    font-size: 1.65rem;
+  }
+
+  .dojoStatementGrid .benefitItem {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 0;
+  }
+
   .trustItem {
     min-width: 0;
     padding: 13px 14px;

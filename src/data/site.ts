@@ -585,7 +585,8 @@ export const senseis: Sensei[] = [
     },
     role: "Instrutor",
     tier: "support",
-    summary: "Instrutor do Mushinkan, participa da formação técnica dos alunos.",
+    summary:
+      "Aluno do Sensei Carlos Rocha desde 2002. Tricampeão paulista de kumite na categoria master, em 2023, 2024 e 2025, e campeão paulista de kata na categoria master em 2025. Participou de dois cursos de aperfeiçoamento no Hombu Dojo, em Tóquio, em 2023 e 2025.",
     image: yata(
       "19c3bf3d67fddd78f7cc802444aed119f835a2228345be18dc6337e4895031a9"
     )
