@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Check } from "lucide-react";
 import type { ScheduleSession } from "@/data/site";
 import {
   findScheduleStatus,
@@ -16,6 +17,7 @@ const periods = [...new Set(scheduleRows.map((row) => row.period))];
 
 type LiveStatus = {
   weekday: number;
+  minutes: number;
   current?: ScheduleSession;
   next?: ScheduleSession;
 };
@@ -41,13 +43,27 @@ function saoPauloNow() {
   return { weekday, minutes };
 }
 
+function sessionHasEnded(
+  sessionWeekday: number,
+  endTime: string,
+  live: LiveStatus | null
+) {
+  if (!live) return false;
+  if (sessionWeekday !== live.weekday) {
+    return sessionWeekday < live.weekday;
+  }
+
+  const [hours, minutes] = endTime.split(":").map(Number);
+  return live.minutes >= hours * 60 + minutes;
+}
+
 export function ScheduleTable() {
   const [live, setLive] = useState<LiveStatus | null>(null);
 
   useEffect(() => {
     const update = () => {
       const { weekday, minutes } = saoPauloNow();
-      setLive({ weekday, ...findScheduleStatus(weekday, minutes) });
+      setLive({ weekday, minutes, ...findScheduleStatus(weekday, minutes) });
     };
 
     update();
@@ -159,6 +175,12 @@ export function ScheduleTable() {
                       );
                     }
 
+                    const hasEnded = sessionHasEnded(
+                      day.weekday,
+                      row.endTime,
+                      live
+                    );
+
                     return (
                       <td className={todayClass} key={day.key}>
                         <div
@@ -166,10 +188,20 @@ export function ScheduleTable() {
                             entry.instructor
                               ? `. Instrutor: ${entry.instructor}`
                               : ""
+                          }${hasEnded ? ". Aula concluída nesta semana." : ""}`}
+                          className={`${styles.session} ${
+                            hasEnded ? styles.completedSession : ""
                           }`}
-                          className={styles.session}
                           tabIndex={entry.instructor ? 0 : undefined}
                         >
+                          {hasEnded ? (
+                            <span
+                              aria-hidden="true"
+                              className={styles.completedCheck}
+                            >
+                              <Check size={13} strokeWidth={3} />
+                            </span>
+                          ) : null}
                           <span className={styles.category}>
                             {entry.className}
                           </span>
@@ -212,27 +244,52 @@ export function ScheduleTable() {
             </h3>
             {scheduleSessions
               .filter((session) => session.weekday === day.weekday)
-              .map((session) => (
-                <div
-                  className={styles.mobileRow}
-                  key={`${day.key}-${session.startTime}`}
-                >
-                  <span className={styles.mobileTime}>{session.startTime}</span>
-                  <span>
-                    <span className={styles.mobileMain}>
-                      {session.className}
-                      {session.level !== session.className
-                        ? ` · ${session.level}`
-                        : null}
+              .map((session) => {
+                const hasEnded = sessionHasEnded(
+                  session.weekday,
+                  session.endTime,
+                  live
+                );
+
+                return (
+                  <div
+                    aria-label={`${session.startTime}, ${session.className}, ${
+                      session.level
+                    }${
+                      session.instructor
+                        ? `. Instrutor: ${session.instructor}`
+                        : ""
+                    }${hasEnded ? ". Aula concluída nesta semana." : ""}`}
+                    className={`${styles.mobileRow} ${
+                      hasEnded ? styles.completedMobileRow : ""
+                    }`}
+                    key={`${day.key}-${session.startTime}`}
+                  >
+                    <span className={styles.mobileTime}>{session.startTime}</span>
+                    <span>
+                      <span className={styles.mobileMain}>
+                        {session.className}
+                        {session.level !== session.className
+                          ? ` · ${session.level}`
+                          : null}
+                      </span>
+                      {session.instructor ? (
+                        <span className={styles.mobileInstructor}>
+                          {session.instructor}
+                        </span>
+                      ) : null}
                     </span>
-                    {session.instructor ? (
-                      <span className={styles.mobileInstructor}>
-                        {session.instructor}
+                    {hasEnded ? (
+                      <span
+                        aria-hidden="true"
+                        className={styles.completedCheck}
+                      >
+                        <Check size={13} strokeWidth={3} />
                       </span>
                     ) : null}
-                  </span>
-                </div>
-              ))}
+                  </div>
+                );
+              })}
           </section>
         ))}
       </div>

@@ -108,6 +108,25 @@
   outline-offset: -4px;
 }
 
+.completedSession .category,
+.completedSession .level {
+  padding-right: 26px;
+}
+
+.completedCheck {
+  position: absolute;
+  top: 11px;
+  right: 12px;
+  display: inline-grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1px solid rgba(200, 16, 46, 0.28);
+  border-radius: 50%;
+  background: rgba(200, 16, 46, 0.08);
+  color: var(--color-accent-dark);
+}
+
 .instructorTooltip {
   position: absolute;
   bottom: calc(100% - 4px);
@@ -325,10 +344,20 @@
   }
 
   .mobileRow {
+    position: relative;
     display: grid;
     grid-template-columns: 64px 1fr;
     gap: 14px;
     padding: 12px 18px;
+  }
+
+  .completedMobileRow {
+    padding-right: 52px;
+  }
+
+  .mobileRow .completedCheck {
+    top: 12px;
+    right: 18px;
   }
 
   .mobileRow + .mobileRow {

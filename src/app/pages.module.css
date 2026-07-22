@@ -1140,6 +1140,10 @@
 }
 
 @media (max-width: 640px) {
+  .heroBg video {
+    object-position: 72% center;
+  }
+
   .firstLessonGrid .step {
     grid-template-columns: 32px minmax(0, 1fr);
     gap: 10px;

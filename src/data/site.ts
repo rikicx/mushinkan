@@ -121,11 +121,16 @@ export function yata(path: string) {
 
 export const siteInfo = {
   name: "Mushinkan",
-  fullName: "Mushinkan Karate-Do",
+  fullName: "Mushinkan Karate Shotokan Tradicional",
+  foundedYear: 2000,
+  positioning: "Karate Shotokan tradicional com experiência e qualidade",
+  siteUrl: "https://mushinkan.com.br",
   locationShort: "Vila Mariana, São Paulo",
   address: "Rua Domingos de Moraes, 2216",
+  postalCode: "04035-000",
   district: "Vila Mariana",
   city: "São Paulo, SP",
+  whatsappNumber: "+5511999165718",
   whatsappDisplay: "(11) 99916-5718",
   whatsappExperimental: whatsappUrl(
     "Olá! Quero agendar uma aula experimental no Mushinkan."
@@ -158,10 +163,12 @@ export const siteInfo = {
     }
   ],
   mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.24336115144!2d-46.63907738502162!3d-23.595603584665863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2e0afa2fed%3A0xac251fbc2ec2c8ca!2sR.+Domingos+de+Morais%2C+2216+-+Vila+Mariana%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1447090302809",
+    "https://www.google.com/maps?q=-23.5956036,-46.6368886&z=17&output=embed",
+  googleMapsUrl:
+    "https://www.google.com/maps/place/Mushinkan+Karate+Shotokan/@-23.5955987,-46.6394635,17z/data=!3m2!4b1!5s0x94ce5a2e0ae50d3d:0x21f1543f5a3ff0b3!4m6!3m5!1s0x94ce5a2e0ae2d499:0x3b3b9fc4bcad80cb!8m2!3d-23.5956036!4d-46.6368886!16s%2Fg%2F1ptvyqgjd",
   mapsRouteUrl:
     "https://www.google.com/maps/dir/?api=1&destination=Rua%20Domingos%20de%20Moraes%2C%202216%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP",
-  transitNote: "A cerca de 5 minutos a pé da estação Santa Cruz do Metrô."
+  transitNote: "Próximo à estação Santa Cruz do Metrô."
 };
 
 /* Curated real reviews. Live Google integration needs the Places API (API
@@ -551,7 +558,7 @@ export const senseis: Sensei[] = [
     role: "Instrutor chefe",
     tier: "chief",
     summary:
-      "Principal referência técnica e institucional do dojo e primeiro brasileiro a alcançar o 7º Dan JKA. Trajetória de décadas no Karate Shotokan, de competidor nos anos 1970 a formador de gerações de karatecas.",
+      "Principal referência técnica e institucional do dojo e primeiro brasileiro a alcançar o 7º Dan JKA. Treina e ensina Karate Shotokan há cerca de 50 anos, foi campeão paulista, brasileiro e sul-americano e treinou com o Sensei Taketo Okuda por mais de 20 anos.",
     image: "/images/sensei-carlos-rocha.jpg"
   },
   {
@@ -563,7 +570,7 @@ export const senseis: Sensei[] = [
     role: "Instrutor",
     tier: "lead",
     summary:
-      "Pratica Karate Shotokan há mais de 30 anos e ensina no Mushinkan. Foi campeão brasileiro de kumite por equipes em 2017 e vice-campeão brasileiro master de kumite em 2024.",
+      "Pratica Karate Shotokan há mais de 30 anos e ensina no Mushinkan. Instrutor formado pela Escola de Karate-Do do Brasil, foi campeão brasileiro de kumite por equipes em 2017 e vice-campeão brasileiro master de kumite em 2024.",
     image: "/images/sensei-marcio-adami.jpg"
   },
   {
@@ -581,7 +588,7 @@ export const senseis: Sensei[] = [
   {
     name: "Alexandre Rollo",
     grade: {
-      value: "3º Dan",
+      value: "1º Dan JKA",
       state: "confirmed"
     },
     role: "Instrutor",
@@ -678,7 +685,7 @@ export const faqs = [
   {
     question: "Como funciona a aula experimental?",
     answer:
-      "Você chama o dojo no WhatsApp, conversa diretamente com um instrutor, combina o melhor horário e vem experimentar uma aula sem compromisso."
+      "A aula experimental dura de 50 a 60 minutos e precisa ser agendada pelo WhatsApp. Você combina o melhor horário com um instrutor e vem com roupa confortável para a prática esportiva. Não é necessário ter experiência prévia."
   },
   {
     question: "Estou fora de forma. Posso acompanhar?",
@@ -718,7 +725,7 @@ export const faqs = [
   {
     question: "Onde fica o dojo?",
     answer:
-      "Na Rua Domingos de Moraes, 2216, Vila Mariana, São Paulo, a cerca de 5 minutos a pé da estação Santa Cruz do Metrô. O mapa está na página Contato."
+      "Na Rua Domingos de Moraes, 2216, Vila Mariana, São Paulo, próximo à estação Santa Cruz do Metrô. O mapa está na página Contato."
   }
 ];
 

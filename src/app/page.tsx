@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { RouteTransitionLink as Link } from "@/components/RouteTransitionLink";
 import { ClassGrid } from "@/components/Cards";
@@ -18,6 +19,20 @@ import {
 } from "@/data/site";
 import pageStyles from "./pages.module.css";
 import sharedStyles from "@/components/Shared.module.css";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Mushinkan | Karate Shotokan na Vila Mariana",
+    description:
+      "Aulas de Karate Shotokan tradicional para crianças e adultos na Vila Mariana. Agende uma aula experimental pelo WhatsApp.",
+    url: "/",
+    siteName: "Mushinkan Karate Shotokan Tradicional",
+    images: ["/images/dojo-treino-panoramica.jpg"],
+    locale: "pt_BR",
+    type: "website"
+  }
+};
 
 export default function Home() {
   return (
@@ -94,6 +109,7 @@ export default function Home() {
       <section
         aria-labelledby="google-reviews-title"
         className={pageStyles.reviewsSection}
+        id="avaliacoes"
       >
         <Reveal className={sharedStyles.wideContainer} variant="stagger">
           <div className={pageStyles.reviewsHeader}>

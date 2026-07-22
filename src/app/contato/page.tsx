@@ -9,7 +9,18 @@ import sharedStyles from "@/components/Shared.module.css";
 export const metadata: Metadata = {
   title: "Contato",
   description:
-    "Fale com o Dojo Mushinkan pelo WhatsApp e veja endereço, mapa e redes sociais."
+    "Fale com o Dojo Mushinkan pelo WhatsApp. Veja endereço, mapa e como chegar à unidade da Vila Mariana, próxima ao Metrô Santa Cruz.",
+  alternates: { canonical: "/contato" },
+  openGraph: {
+    title: "Contato e localização | Mushinkan",
+    description:
+      "Fale com o Mushinkan pelo WhatsApp e veja como chegar ao dojo na Vila Mariana.",
+    url: "/contato",
+    siteName: "Mushinkan Karate Shotokan Tradicional",
+    images: ["/images/dojo-central.jpg"],
+    locale: "pt_BR",
+    type: "website"
+  }
 };
 
 export default function ContactPage() {

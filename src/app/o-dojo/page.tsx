@@ -12,7 +12,18 @@ import sharedStyles from "@/components/Shared.module.css";
 export const metadata: Metadata = {
   title: "O Dojo",
   description:
-    "A história, a tradição e os instrutores do Dojo Mushinkan, escola de Karate Shotokan tradicional na Vila Mariana, São Paulo."
+    "Conheça a história, a tradição e os instrutores do Mushinkan, dojo de Karate Shotokan tradicional na Vila Mariana, São Paulo.",
+  alternates: { canonical: "/o-dojo" },
+  openGraph: {
+    title: "O Dojo Mushinkan | História e instrutores",
+    description:
+      "Conheça a história, a tradição e os instrutores do Mushinkan, na Vila Mariana.",
+    url: "/o-dojo",
+    siteName: "Mushinkan Karate Shotokan Tradicional",
+    images: ["/images/dojo-central.jpg"],
+    locale: "pt_BR",
+    type: "website"
+  }
 };
 
 export default function DojoPage() {
@@ -91,39 +102,40 @@ export default function DojoPage() {
         >
           <div>
             <p className={sharedStyles.eyebrow}>História</p>
-            <h2>Cinco décadas de Karate Shotokan.</h2>
+            <h2>Desde 2000, no mesmo endereço.</h2>
             <p>
-              O Mushinkan é liderado pelo Sensei Carlos Rocha, com trajetória
-              no Karate desde os anos 1970 — registrada em campeonatos, cursos
-              internacionais e na imprensa brasileira — e dedicado à
-              preservação do Karate Shotokan tradicional.
+              O Mushinkan foi fundado em 2000 e, desde o primeiro treino,
+              permanece na Rua Domingos de Moraes, 2216. Sua proposta é
+              direta: Karate Shotokan tradicional com experiência e qualidade.
             </p>
             <p>
-              O acervo do dojo guarda recortes da Gazeta Esportiva, registros
-              de 1978, a história do Karate Shotokan tradicional no Brasil e a
-              festa dos 50 anos de Karate do Sensei.
+              A formação do dojo vem do Sensei Taketo Okuda, professor do
+              Sensei Carlos Rocha por mais de 20 anos e aluno direto do Sensei
+              Masatoshi Nakayama, principal modernizador do Karate Shotokan.
+              Os instrutores reúnem formação técnica sólida e títulos em
+              competições oficiais.
             </p>
           </div>
           <div className={pageStyles.lineage}>
             <div className={pageStyles.lineageItem}>
-              <strong>Anos 1970</strong>
+              <strong>2000</strong>
               <span>
-                Início da trajetória do Sensei Carlos Rocha no Karate, como
-                competidor.
+                Fundação do Mushinkan na Vila Mariana, no endereço onde o dojo
+                permanece até hoje.
               </span>
             </div>
             <div className={pageStyles.lineageItem}>
-              <strong>1978</strong>
+              <strong>Linhagem</strong>
               <span>
-                Registro histórico da luta com Masahiko Tanaka, preservado no
-                acervo do dojo.
+                Sensei Carlos Rocha treinou por mais de 20 anos com o Sensei
+                Taketo Okuda, aluno direto do Sensei Masatoshi Nakayama.
               </span>
             </div>
             <div className={pageStyles.lineageItem}>
               <strong>7º Dan JKA</strong>
               <span>
-                Primeiro brasileiro a alcançar o 7º Dan JKA, hoje instrutor
-                chefe do Mushinkan.
+                Sensei Carlos Rocha é o brasileiro mais graduado dentro da JKA
+                e o instrutor-chefe do Mushinkan.
               </span>
             </div>
           </div>

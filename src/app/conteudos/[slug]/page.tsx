@@ -33,7 +33,17 @@ export async function generateMetadata({
 
   return {
     title: article.title,
-    description: article.description
+    description: article.description,
+    alternates: { canonical: `/conteudos/${article.slug}` },
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      url: `/conteudos/${article.slug}`,
+      type: "article",
+      siteName: "Mushinkan Karate Shotokan Tradicional",
+      images: [article.heroImage ?? "/images/dojo-treino-panoramica.jpg"],
+      locale: "pt_BR"
+    }
   };
 }
 
@@ -46,9 +56,32 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   }
 
   const related = contentPosts.filter((post) => post.slug !== article.slug);
+  const articleUrl = `${siteInfo.siteUrl}/conteudos/${article.slug}`;
+  const articleImage = article.heroImage
+    ? new URL(article.heroImage, siteInfo.siteUrl).toString()
+    : `${siteInfo.siteUrl}/images/dojo-treino-panoramica.jpg`;
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${articleUrl}#article`,
+    headline: article.title,
+    description: article.description,
+    image: articleImage,
+    mainEntityOfPage: articleUrl,
+    inLanguage: "pt-BR",
+    author: { "@id": `${siteInfo.siteUrl}/#dojo` },
+    publisher: { "@id": `${siteInfo.siteUrl}/#dojo` },
+    about: ["Karate Shotokan", "Karate tradicional"]
+  };
 
   return (
     <article className={`${sharedStyles.section} ${pageStyles.articleTop}`}>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleStructuredData)
+        }}
+        type="application/ld+json"
+      />
       <div className={`${sharedStyles.wideContainer} ${pageStyles.articleShell}`}>
         <div className={pageStyles.article}>
           <Breadcrumbs

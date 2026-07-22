@@ -15,12 +15,51 @@ import sharedStyles from "@/components/Shared.module.css";
 export const metadata: Metadata = {
   title: "Aulas e Horários",
   description:
-    "Turmas e horários de Karate Shotokan do Dojo Mushinkan na Vila Mariana."
+    "Confira turmas e horários de Karate Shotokan para crianças e adultos no Mushinkan, na Vila Mariana. Aula experimental com agendamento.",
+  alternates: { canonical: "/aulas-e-horarios" },
+  openGraph: {
+    title: "Aulas e horários de Karate Shotokan | Mushinkan",
+    description:
+      "Confira a grade semanal e agende uma aula experimental no Mushinkan, na Vila Mariana.",
+    url: "/aulas-e-horarios",
+    siteName: "Mushinkan Karate Shotokan Tradicional",
+    images: ["/images/dojo-todos-niveis.jpg"],
+    locale: "pt_BR",
+    type: "website"
+  }
+};
+
+const classesStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${siteInfo.siteUrl}/aulas-e-horarios#karate-shotokan`,
+  name: "Aulas de Karate Shotokan na Vila Mariana",
+  description:
+    "Treinos de Karate Shotokan tradicional para crianças e adultos, do iniciante ao avançado.",
+  provider: { "@id": `${siteInfo.siteUrl}/#dojo` },
+  areaServed: "Vila Mariana, São Paulo",
+  audience: [
+    { "@type": "Audience", audienceType: "Crianças" },
+    { "@type": "Audience", audienceType: "Adultos" }
+  ],
+  offers: {
+    "@type": "Offer",
+    name: "Aula experimental",
+    url: `${siteInfo.siteUrl}/aulas-e-horarios#primeira-aula`,
+    description:
+      "Aula experimental com duração de 50 a 60 minutos, mediante agendamento pelo WhatsApp."
+  }
 };
 
 export default function ClassesPage() {
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(classesStructuredData)
+        }}
+        type="application/ld+json"
+      />
       <PageHero
         compact
         eyebrow="Aulas e horários"
@@ -117,8 +156,12 @@ export default function ClassesPage() {
             <p className={sharedStyles.eyebrow}>O que levar</p>
             <div className={pageStyles.infoRows}>
               <Info
+                label="Aula experimental"
+                value="Duração de 50 a 60 minutos."
+              />
+              <Info
                 label="Roupa"
-                value="Roupa confortável de treino é suficiente."
+                value="Roupa confortável para a prática esportiva é suficiente."
               />
               <Info
                 label="Kimono"
@@ -126,7 +169,11 @@ export default function ClassesPage() {
               />
               <Info
                 label="Agendamento"
-                value="Combine a visita previamente pelo WhatsApp."
+                value="É necessário combinar a visita previamente pelo WhatsApp."
+              />
+              <Info
+                label="Experiência"
+                value="Não é necessária experiência ou formação prévia."
               />
             </div>
             <p>
