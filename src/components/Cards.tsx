@@ -94,6 +94,7 @@ export function InstructorGrid({ people }: { people: Sensei[] }) {
             className={styles.leadImage}
             label={`Retrato · ${sensei.name}`}
             src={sensei.image}
+            objectPosition={sensei.imagePosition}
           />
           <div className={`${styles.cardBody} ${styles.leadBody}`}>
             <div>
