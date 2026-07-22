@@ -12,18 +12,7 @@ import sharedStyles from "@/components/Shared.module.css";
 export const metadata: Metadata = {
   title: "Karate Shotokan",
   description:
-    "Entenda as origens, a filosofia, o aquecimento e os três pilares do Karate Shotokan: Kihon, Kata e Kumite.",
-  alternates: { canonical: "/karate-shotokan" },
-  openGraph: {
-    title: "Karate Shotokan: origens, método e benefícios",
-    description:
-      "Entenda as origens, a filosofia e como o Karate Shotokan é praticado no Mushinkan.",
-    url: "/karate-shotokan",
-    siteName: "Mushinkan Karate Shotokan Tradicional",
-    images: ["/images/shotokan-tiger.png"],
-    locale: "pt_BR",
-    type: "website"
-  }
+    "Origens, filosofia, metodologia e benefícios do Karate Shotokan."
 };
 
 const timeline = [

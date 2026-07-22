@@ -12,18 +12,7 @@ import sharedStyles from "@/components/Shared.module.css";
 export const metadata: Metadata = {
   title: "O Dojo",
   description:
-    "Conheça a história, a tradição e os instrutores do Mushinkan, dojo de Karate Shotokan tradicional na Vila Mariana, São Paulo.",
-  alternates: { canonical: "/o-dojo" },
-  openGraph: {
-    title: "O Dojo Mushinkan | História e instrutores",
-    description:
-      "Conheça a história, a tradição e os instrutores do Mushinkan, na Vila Mariana.",
-    url: "/o-dojo",
-    siteName: "Mushinkan Karate Shotokan Tradicional",
-    images: ["/images/dojo-central.jpg"],
-    locale: "pt_BR",
-    type: "website"
-  }
+    "A história, a tradição e os instrutores do Dojo Mushinkan, escola de Karate Shotokan tradicional na Vila Mariana, São Paulo."
 };
 
 export default function DojoPage() {

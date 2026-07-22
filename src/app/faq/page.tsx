@@ -9,42 +9,12 @@ import sharedStyles from "@/components/Shared.module.css";
 export const metadata: Metadata = {
   title: "Perguntas frequentes",
   description:
-    "Tire suas dúvidas sobre turmas, horários e a aula experimental de Karate Shotokan no Mushinkan.",
-  alternates: { canonical: "/faq" },
-  openGraph: {
-    title: "Perguntas frequentes | Mushinkan",
-    description:
-      "Respostas sobre turmas, horários e a primeira aula de Karate Shotokan no Mushinkan.",
-    url: "/faq",
-    siteName: "Mushinkan Karate Shotokan Tradicional",
-    images: ["/images/dojo-todos-niveis.jpg"],
-    locale: "pt_BR",
-    type: "website"
-  }
-};
-
-const faqStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer
-    }
-  }))
+    "Tire suas dúvidas sobre aulas, horários, turmas e a aula experimental do Dojo Mushinkan."
 };
 
 export default function FaqPage() {
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqStructuredData)
-        }}
-        type="application/ld+json"
-      />
       <PageHero
         compact
         eyebrow="Perguntas frequentes"

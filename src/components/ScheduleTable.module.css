@@ -121,10 +121,7 @@
   width: 20px;
   height: 20px;
   place-items: center;
-  border: 1px solid rgba(200, 16, 46, 0.28);
-  border-radius: 50%;
-  background: rgba(200, 16, 46, 0.08);
-  color: var(--color-accent-dark);
+  color: #72c995;
 }
 
 .instructorTooltip {

@@ -122,15 +122,10 @@ export function yata(path: string) {
 export const siteInfo = {
   name: "Mushinkan",
   fullName: "Mushinkan Karate Shotokan Tradicional",
-  foundedYear: 2000,
-  positioning: "Karate Shotokan tradicional com experiência e qualidade",
-  siteUrl: "https://mushinkan.com.br",
   locationShort: "Vila Mariana, São Paulo",
   address: "Rua Domingos de Moraes, 2216",
-  postalCode: "04035-000",
   district: "Vila Mariana",
   city: "São Paulo, SP",
-  whatsappNumber: "+5511999165718",
   whatsappDisplay: "(11) 99916-5718",
   whatsappExperimental: whatsappUrl(
     "Olá! Quero agendar uma aula experimental no Mushinkan."
@@ -164,8 +159,6 @@ export const siteInfo = {
   ],
   mapEmbed:
     "https://www.google.com/maps?q=-23.5956036,-46.6368886&z=17&output=embed",
-  googleMapsUrl:
-    "https://www.google.com/maps/place/Mushinkan+Karate+Shotokan/@-23.5955987,-46.6394635,17z/data=!3m2!4b1!5s0x94ce5a2e0ae50d3d:0x21f1543f5a3ff0b3!4m6!3m5!1s0x94ce5a2e0ae2d499:0x3b3b9fc4bcad80cb!8m2!3d-23.5956036!4d-46.6368886!16s%2Fg%2F1ptvyqgjd",
   mapsRouteUrl:
     "https://www.google.com/maps/dir/?api=1&destination=Rua%20Domingos%20de%20Moraes%2C%202216%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP",
   transitNote: "Próximo à estação Santa Cruz do Metrô."

@@ -9,18 +9,7 @@ import sharedStyles from "@/components/Shared.module.css";
 export const metadata: Metadata = {
   title: "Conteúdos",
   description:
-    "Artigos do Mushinkan sobre história, filosofia, benefícios e prática do Karate Shotokan.",
-  alternates: { canonical: "/conteudos" },
-  openGraph: {
-    title: "Conteúdos sobre Karate Shotokan | Mushinkan",
-    description:
-      "Leia sobre a história, a filosofia, os benefícios e a prática do Karate Shotokan.",
-    url: "/conteudos",
-    siteName: "Mushinkan Karate Shotokan Tradicional",
-    images: ["/images/dojo-kata.jpg"],
-    locale: "pt_BR",
-    type: "website"
-  }
+    "Artigos sobre história, filosofia, benefícios e prática do Karate Shotokan."
 };
 
 export default function ContentPage() {

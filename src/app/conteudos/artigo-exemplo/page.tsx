@@ -1,5 +1,5 @@
-import { permanentRedirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export default function LegacyArticleExamplePage() {
-  permanentRedirect("/conteudos/o-que-e-o-karate");
+  redirect("/conteudos/o-que-e-o-karate");
 }
