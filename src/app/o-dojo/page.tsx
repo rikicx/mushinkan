@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { RouteTransitionLink as Link } from "@/components/RouteTransitionLink";
-import { FeaturedSensei, InstructorGrid } from "@/components/Cards";
+import { FeaturedSenseiList, InstructorGrid } from "@/components/Cards";
 import { CTASection } from "@/components/CTASection";
 import { PageAnchors } from "@/components/PageAnchors";
 import { PageHero } from "@/components/PageHero";
@@ -16,8 +17,12 @@ export const metadata: Metadata = {
 };
 
 export default function DojoPage() {
-  const chief = senseis.find((sensei) => sensei.tier === "chief");
-  const instructors = senseis.filter((sensei) => sensei.tier !== "chief");
+  const featuredInstructors = senseis.filter(
+    (sensei) => sensei.tier === "featured"
+  );
+  const instructors = senseis.filter(
+    (sensei) => sensei.tier !== "featured"
+  );
 
   return (
     <>
@@ -38,9 +43,13 @@ export default function DojoPage() {
       />
 
       <figure className={pageStyles.dojoBand}>
-        <img
+        <Image
           alt="Turma adulta em treino no tatame do Mushinkan, com o banner do dojo ao fundo"
-          src="/images/dojo-treino-panoramica.jpg"
+          height={1366}
+          priority
+          sizes="100vw"
+          src="/images/dojo-treino-panoramica.webp"
+          width={2048}
         />
         <figcaption>
           Treino da turma adulta no tatame do Mushinkan, Vila Mariana
@@ -54,10 +63,12 @@ export default function DojoPage() {
           <figure
             className={`${pageStyles.tallFigure} ${pageStyles.shomenFigure}`}
           >
-            <img
+            <Image
               alt="Shomen do dojo: o altar, o retrato de Gichin Funakoshi e o quadro com o Dojo Kun, acima do nome Mushinkan pintado no piso"
-              loading="lazy"
-              src="/images/dojo-central.jpg"
+              height={2048}
+              sizes="(max-width: 960px) 100vw, 50vw"
+              src="/images/dojo-central.webp"
+              width={986}
             />
           </figure>
           <div>
@@ -131,7 +142,10 @@ export default function DojoPage() {
         </div>
       </section>
 
-      <section className={sharedStyles.section} id="treino">
+      <section
+        className={`${sharedStyles.section} ${pageStyles.trainingSection}`}
+        id="treino"
+      >
         <div
           className={`${sharedStyles.wideContainer} ${pageStyles.twoCol} ${pageStyles.twoColStart}`}
         >
@@ -162,23 +176,28 @@ export default function DojoPage() {
             </p>
           </div>
           <figure className={pageStyles.photoFigure}>
-            <img
+            <Image
               alt="Alunos de faixas diferentes executando kata lado a lado durante a aula"
-              loading="lazy"
-              src="/images/dojo-kata.jpg"
+              height={1366}
+              sizes="(max-width: 960px) 100vw, 50vw"
+              src="/images/dojo-kata.webp"
+              width={2048}
             />
           </figure>
         </div>
       </section>
 
-      <section className={sharedStyles.sectionTight} id="instrutores">
+      <section
+        className={`${sharedStyles.sectionTight} ${pageStyles.instructorsSection}`}
+        id="instrutores"
+      >
         <div className={sharedStyles.wideContainer}>
           <SectionHeading
             eyebrow="Senseis"
             title="A equipe de instrutores."
             text="Conheça os instrutores e suas trajetórias no Karate Shotokan."
           />
-          {chief ? <FeaturedSensei sensei={chief} /> : null}
+          <FeaturedSenseiList people={featuredInstructors} />
           <InstructorGrid people={instructors} />
         </div>
       </section>
@@ -188,10 +207,12 @@ export default function DojoPage() {
           className={`${sharedStyles.wideContainer} ${pageStyles.twoCol} ${pageStyles.twoColStart}`}
         >
           <figure className={pageStyles.photoFigure}>
-            <img
+            <Image
               alt="Alunos de idades e graduações diferentes treinando juntos no tatame"
-              loading="lazy"
-              src="/images/dojo-todos-niveis.jpg"
+              height={1534}
+              sizes="(max-width: 960px) 100vw, 50vw"
+              src="/images/dojo-todos-niveis.webp"
+              width={1343}
             />
           </figure>
           <div>

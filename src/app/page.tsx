@@ -33,9 +33,15 @@ export default function Home() {
         <div className={pageStyles.heroDots} aria-hidden="true" />
         <div className={pageStyles.heroInner}>
           <p className={sharedStyles.eyebrow}>
-            Dojo de Karate Shotokan · Vila Mariana, São Paulo
+            Tradição, disciplina e evolução.
           </p>
-          <h1>Tradição, disciplina e evolução através do Karate Shotokan.</h1>
+          <h1>
+            Dojo de Karate Shotokan
+            <br />
+            Vila Mariana
+            <br />
+            São Paulo
+          </h1>
           <p>
             Mais que uma academia: um dojo onde <strong>Kihon, Kata e
             Kumite</strong> são cultivados com autenticidade, do iniciante ao
@@ -249,7 +255,7 @@ export default function Home() {
           <MediaBlock
             className={pageStyles.teamPhoto}
             label="Foto · instrutores e alunos em treino no tatame"
-            src="/images/dojo-seiza.jpg"
+            src="/images/dojo-seiza.webp"
           />
           <div>
             <p className={sharedStyles.eyebrow}>Equipe de instrutores</p>

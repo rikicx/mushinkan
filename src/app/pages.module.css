@@ -565,6 +565,14 @@
   align-items: start;
 }
 
+.trainingSection {
+  padding-bottom: clamp(24px, 3vw, 40px);
+}
+
+.instructorsSection {
+  padding-top: clamp(24px, 3vw, 40px);
+}
+
 /* /o-dojo documentary photography */
 .dojoBand {
   margin: 0;
@@ -996,9 +1004,9 @@
 
 .articleShell {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: clamp(32px, 6vw, 72px);
+  grid-template-columns: minmax(0, 760px);
   align-items: start;
+  justify-content: center;
 }
 
 .article {

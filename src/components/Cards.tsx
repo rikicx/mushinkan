@@ -11,6 +11,8 @@ export function ClassCard({ group }: { group: ClassGroup }) {
       <MediaBlock
         className={styles.classImage}
         label={`Foto · ${group.imageLabel}`}
+        objectPosition={group.imagePosition}
+        src={group.image}
       />
       <div className={styles.cardBody}>
         <div>
@@ -45,6 +47,7 @@ export function SenseiCard({ sensei }: { sensei: Sensei }) {
       <MediaBlock
         className={styles.senseiImage}
         label={`Retrato · ${sensei.name}`}
+        objectPosition={sensei.imagePosition}
         src={sensei.image}
       />
       <div className={styles.cardBody}>
@@ -69,7 +72,12 @@ export function SenseiGrid({ people }: { people: Sensei[] }) {
 export function FeaturedSensei({ sensei }: { sensei: Sensei }) {
   return (
     <article className={styles.featuredSensei}>
-      <MediaBlock label={`Retrato · ${sensei.name}`} src={sensei.image} />
+      <MediaBlock
+        className={styles.featuredSenseiImage}
+        label={`Retrato · ${sensei.name}`}
+        objectPosition={sensei.imagePosition}
+        src={sensei.image}
+      />
       <div className={styles.featuredSenseiBody}>
         <p className={styles.personLabel}>Sensei</p>
         <h3>{sensei.name}</h3>
@@ -79,6 +87,16 @@ export function FeaturedSensei({ sensei }: { sensei: Sensei }) {
         <p>{sensei.summary}</p>
       </div>
     </article>
+  );
+}
+
+export function FeaturedSenseiList({ people }: { people: Sensei[] }) {
+  return (
+    <div className={styles.featuredSenseiList}>
+      {people.map((sensei) => (
+        <FeaturedSensei key={sensei.name} sensei={sensei} />
+      ))}
+    </div>
   );
 }
 
@@ -93,8 +111,8 @@ export function InstructorGrid({ people }: { people: Sensei[] }) {
           <MediaBlock
             className={styles.leadImage}
             label={`Retrato · ${sensei.name}`}
-            src={sensei.image}
             objectPosition={sensei.imagePosition}
+            src={sensei.image}
           />
           <div className={`${styles.cardBody} ${styles.leadBody}`}>
             <div>
@@ -118,8 +136,8 @@ export function ContentCard({ post }: { post: ContentPost }) {
       <MediaBlock
         className={styles.contentImage}
         label={post.imageLabel}
-        src={post.image}
         objectPosition={post.imagePosition}
+        src={post.image}
       />
       <div className={styles.cardBody}>
         <div className={styles.postMeta}>

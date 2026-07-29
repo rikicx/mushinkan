@@ -83,7 +83,7 @@ export default function ShotokanPage() {
           <MediaBlock
             className={pageStyles.tigerMedia}
             label="Símbolo histórico · tigre do Shotokan"
-            src="/images/shotokan-tiger.png"
+            src="/images/shotokan-tiger.webp"
           />
         </div>
       </section>

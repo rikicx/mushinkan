@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
+import Script from "next/script";
 import "@fontsource/yuji-syuku/400.css";
 import { RouteTransitionProvider } from "@/components/RouteTransition";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { FloatingActions } from "@/components/FloatingActions";
+import { GooglePageView } from "@/components/GooglePageView";
 import { siteInfo } from "@/data/site";
 import "./globals.css";
 
@@ -43,6 +45,19 @@ export default function RootLayout({
       lang="pt-BR"
     >
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-M6JN0885HM"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-M6JN0885HM', { send_page_view: false });
+          `}
+        </Script>
+        <GooglePageView />
         <RouteTransitionProvider>
           <a className="skip-link" href="#conteudo">
             Pular para o conteúdo

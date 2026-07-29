@@ -105,24 +105,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </div>
           </div>
         </div>
-
-        <aside className={pageStyles.sidebar}>
-          <div className={pageStyles.infoCard}>
-            <p className={sharedStyles.eyebrow}>Fonte</p>
-            <p>
-              Conteúdo revisado e reorganizado a partir do acervo editorial do
-              Mushinkan.
-            </p>
-            <a
-              className={sharedStyles.inlineLink}
-              href={article.sourceUrl}
-              rel="noreferrer"
-              target="_blank"
-            >
-              {article.sourceLabel}
-            </a>
-          </div>
-        </aside>
       </div>
 
       {related.length ? (

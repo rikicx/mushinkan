@@ -15,13 +15,15 @@ export type ClassGroup = {
   guidance: ConfirmableValue;
   description: string;
   imageLabel: string;
+  image?: string;
+  imagePosition?: string;
 };
 
 export type Sensei = {
   name: string;
   grade: ConfirmableValue;
   role: string;
-  tier: "chief" | "lead" | "support";
+  tier: "featured" | "lead" | "support";
   summary: string;
   image?: string;
   imagePosition?: string;
@@ -128,7 +130,7 @@ export const siteInfo = {
   city: "São Paulo, SP",
   whatsappDisplay: "(11) 99916-5718",
   whatsappExperimental: whatsappUrl(
-    "Olá! Quero agendar uma aula experimental no Mushinkan."
+    "Olá, gostaria de mais informações sobre o dojo?"
   ),
   whatsappClass: whatsappUrl(
     "Olá! Quero saber qual turma do Mushinkan é mais indicada para mim."
@@ -334,7 +336,8 @@ export const classGroups: ClassGroup[] = [
     },
     description:
       "Disciplina, respeito, concentração e confiança desde os primeiros passos.",
-    imageLabel: "Turma infantil"
+    imageLabel: "Turma infantil",
+    image: "/images/turma-infantil-mushinkan.webp"
   },
   {
     id: "adulto",
@@ -346,7 +349,8 @@ export const classGroups: ClassGroup[] = [
     },
     description:
       "Técnica, condicionamento físico, disciplina mental e aprofundamento no Karate Shotokan.",
-    imageLabel: "Turma adulto"
+    imageLabel: "Turma adulto",
+    image: "/images/turma-adulto-mushinkan.webp"
   }
 ];
 
@@ -549,22 +553,24 @@ export const senseis: Sensei[] = [
       state: "confirmed"
     },
     role: "Instrutor chefe",
-    tier: "chief",
+    tier: "featured",
     summary:
       "Principal referência técnica e institucional do dojo e primeiro brasileiro a alcançar o 7º Dan JKA. Treina e ensina Karate Shotokan há cerca de 50 anos, foi campeão paulista, brasileiro e sul-americano e treinou com o Sensei Taketo Okuda por mais de 20 anos.",
-    image: "/images/sensei-carlos-rocha.jpg"
+    image: "/images/sensei-carlos-rocha.webp",
+    imagePosition: "center 28%"
   },
   {
-    name: "Marcio Adami Santos",
+    name: "Márcio Adami Santos",
     grade: {
       value: "3º Dan JKA",
       state: "confirmed"
     },
-    role: "Instrutor",
-    tier: "lead",
+    role: "Instrutor responsável pelo dojo",
+    tier: "featured",
     summary:
-      "Pratica Karate Shotokan há mais de 30 anos e ensina no Mushinkan. Instrutor formado pela Escola de Karate-Do do Brasil, foi campeão brasileiro de kumite por equipes em 2017 e vice-campeão brasileiro master de kumite em 2024.",
-    image: "/images/sensei-marcio-adami.jpg"
+      "Responsável pela condução cotidiana do Mushinkan e por grande parte dos treinos. Pratica Karate Shotokan há mais de 30 anos, é instrutor formado pela Escola de Karate-Do do Brasil, foi campeão brasileiro de kumite por equipes em 2017 e vice-campeão brasileiro master de kumite em 2024.",
+    image: "/images/sensei-marcio-adami.webp",
+    imagePosition: "center 32%"
   },
   {
     name: "Leandro Romero",
@@ -576,7 +582,7 @@ export const senseis: Sensei[] = [
     tier: "lead",
     summary:
       "Iniciou no Karate Shotokan em 1992 e treina no Mushinkan desde 2010. Foi duas vezes vice-campeão de kata por equipes, em 2017 e 2019.",
-    image: "/images/sensei-leandro-romero.png"
+    image: "/images/sensei-leandro-romero.webp"
   },
   {
     name: "Alexandre Rollo",
@@ -588,7 +594,7 @@ export const senseis: Sensei[] = [
     tier: "support",
     summary:
       "Aluno do Sensei Carlos Rocha desde 2002. Tricampeão paulista de kumite na categoria master, em 2023, 2024 e 2025, e campeão paulista de kata na categoria master em 2025. Participou de dois cursos de aperfeiçoamento no Hombu Dojo, em Tóquio, em 2023 e 2025.",
-    image: "/images/sensei-alexandre-rollo.jpg",
+    image: "/images/sensei-alexandre-rollo.webp",
     imagePosition: "center 18%"
   },
   {
@@ -601,7 +607,7 @@ export const senseis: Sensei[] = [
     tier: "support",
     summary:
       "Aluno do Sensei Carlos Rocha desde 2000 e 3º Dan JKA desde 2024. Campeão paulista de kata e kumite na categoria Master I em 2023.",
-    image: "/images/sensei-kenzo-taniguti.jpg"
+    image: "/images/sensei-kenzo-taniguti.webp"
   }
 ];
 
@@ -741,7 +747,7 @@ export const contentPosts: ContentPost[] = [
     summary:
       "A base filosófica do Shotokan: disciplina, respeito, humildade e perseverança.",
     imageLabel: "Caligrafia",
-    image: "/images/dojo-central.jpg",
+    image: "/images/dojo-central.webp",
     href: "/conteudos/niju-kun"
   },
   {
@@ -751,7 +757,7 @@ export const contentPosts: ContentPost[] = [
     summary:
       "Benefícios físicos, mentais, emocionais e sociais da prática regular.",
     imageLabel: "Treino",
-    image: "/images/dojo-todos-niveis.jpg",
+    image: "/images/dojo-todos-niveis.webp",
     href: "/conteudos/beneficios-do-karate"
   }
 ];
