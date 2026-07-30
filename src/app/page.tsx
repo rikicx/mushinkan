@@ -266,9 +266,9 @@ export default function Home() {
               do Karate Shotokan tradicional.
             </p>
             <p>
-              Com orientação técnica, disciplina e respeito, a equipe acompanha
-              o desenvolvimento de cada aluno — do primeiro treino ao exame de
-              faixa.
+              Com orientação técnica, disciplina e respeito, a equipe está
+              presente ao longo de toda a jornada de cada aluno, respeitando seu
+              ritmo e apoiando sua evolução dentro e fora do dojo.
             </p>
             <p style={{ marginTop: 24 }}>
               <Link

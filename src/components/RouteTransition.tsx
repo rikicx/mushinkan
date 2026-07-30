@@ -9,7 +9,7 @@ import {
 import styles from "./RouteTransition.module.css";
 
 const SHOW_DELAY_MS = 160;
-const MIN_VISIBLE_MS = 420;
+const MIN_VISIBLE_MS = 750;
 const REDUCED_MOTION_MIN_VISIBLE_MS = 100;
 const EXIT_DURATION_MS = 140;
 const SAFETY_TIMEOUT_MS = 8000;
