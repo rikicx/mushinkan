@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { RouteTransitionLink as Link } from "@/components/RouteTransitionLink";
 import { ClassGrid } from "@/components/Cards";
 import { CTASection } from "@/components/CTASection";
+import { FaqAnswer } from "@/components/FaqAnswer";
 import { HeroMedia } from "@/components/HeroMedia";
 import { LocationSection } from "@/components/LocationSection";
 import { MediaBlock } from "@/components/MediaBlock";
@@ -328,7 +329,9 @@ export default function Home() {
           {faqs.slice(0, 3).map((faq) => (
             <article className={pageStyles.faqItem} key={faq.question}>
               <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
+              <p>
+                <FaqAnswer faq={faq} />
+              </p>
             </article>
           ))}
           <p className={pageStyles.faqMore}>

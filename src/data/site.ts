@@ -109,6 +109,17 @@ export type GoogleReview = {
   text: string;
 };
 
+export type FaqLink = {
+  label: string;
+  href: string;
+};
+
+export type Faq = {
+  question: string;
+  answer: string;
+  links?: FaqLink[];
+};
+
 const apixBase =
   "https://yata-apix-cd803d7f-15c8-4a01-a114-f0dc874154ae.s3-object.locaweb.com.br";
 const yataBase = "https://yata.s3-object.locaweb.com.br";
@@ -665,7 +676,7 @@ export const benefits = [
 
 /* The first three questions appear on the Home page; the full list lives on
    the /faq page. */
-export const faqs = [
+export const faqs: Faq[] = [
   {
     question: "Preciso ter experiência para começar?",
     answer:
@@ -679,12 +690,14 @@ export const faqs = [
   {
     question: "Quais são os horários?",
     answer:
-      "Há treinos de segunda a sexta nos períodos da manhã, tarde e noite, para as turmas infantil e adulto. A grade completa está na página Aulas e Horários."
+      "Há treinos de segunda a sexta nos períodos da manhã, tarde e noite, para as turmas infantil e adulto. A grade completa está na página Aulas e Horários.",
+    links: [{ label: "Aulas e Horários", href: "/aulas-e-horarios" }]
   },
   {
     question: "Como funciona a aula experimental?",
     answer:
-      "A aula experimental dura de 50 a 60 minutos e precisa ser agendada pelo WhatsApp. Você combina o melhor horário com um instrutor e vem com roupa confortável para a prática esportiva. Não é necessário ter experiência prévia."
+      "A aula experimental dura de 50 a 60 minutos e precisa ser agendada pelo WhatsApp. Você combina o melhor horário com um instrutor e vem com roupa confortável para a prática esportiva. Não é necessário ter experiência prévia.",
+    links: [{ label: "WhatsApp", href: siteInfo.whatsappExperimental }]
   },
   {
     question: "Estou fora de forma. Posso acompanhar?",
@@ -694,7 +707,8 @@ export const faqs = [
   {
     question: "Existem aulas para alunos avançados?",
     answer:
-      "Sim. A grade possui horários de nível avançado e intermediário, além das aulas para todos os níveis. Consulte a página Aulas e Horários para ver a programação semanal."
+      "Sim. A grade possui horários de nível avançado e intermediário, além das aulas para todos os níveis. Consulte a página Aulas e Horários para ver a programação semanal.",
+    links: [{ label: "Aulas e Horários", href: "/aulas-e-horarios" }]
   },
   {
     question: "Como é uma aula típica no Mushinkan?",
@@ -709,12 +723,14 @@ export const faqs = [
   {
     question: "Quanto custa a mensalidade?",
     answer:
-      "Os valores são conversados diretamente no WhatsApp, junto com a indicação da turma mais adequada para você ou para seu filho."
+      "Os valores são conversados diretamente no WhatsApp, junto com a indicação da turma mais adequada para você ou para seu filho.",
+    links: [{ label: "WhatsApp", href: siteInfo.whatsappExperimental }]
   },
   {
     question: "Quem são os instrutores?",
     answer:
-      "O Mushinkan conta com uma equipe de instrutores de Karate Shotokan tradicional, apresentada em detalhes na página O Dojo."
+      "O Mushinkan conta com uma equipe de instrutores de Karate Shotokan tradicional, apresentada em detalhes na página O Dojo.",
+    links: [{ label: "O Dojo", href: "/o-dojo#instrutores" }]
   },
   {
     question: "O que levar na primeira aula?",
@@ -724,7 +740,8 @@ export const faqs = [
   {
     question: "Onde fica o dojo?",
     answer:
-      "Na Rua Domingos de Moraes, 2216, Vila Mariana, São Paulo, próximo à estação Santa Cruz do Metrô. O mapa está na página Contato."
+      "Na Rua Domingos de Moraes, 2216, Vila Mariana, São Paulo, próximo à estação Santa Cruz do Metrô. O mapa está na página Contato.",
+    links: [{ label: "Contato", href: "/contato" }]
   }
 ];
 

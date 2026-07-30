@@ -1,12 +1,13 @@
+import type { ReactNode } from "react";
 import pageStyles from "@/app/pages.module.css";
 import sharedStyles from "./Shared.module.css";
 
 type PageHeroProps = {
   eyebrow: string;
   title: string;
-  text: string;
+  text: ReactNode;
   mark?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   compact?: boolean;
 };
 

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { CTASection } from "@/components/CTASection";
+import { FaqAnswer } from "@/components/FaqAnswer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
-import { faqs } from "@/data/site";
+import { faqs, siteInfo } from "@/data/site";
 import pageStyles from "@/app/pages.module.css";
 import sharedStyles from "@/components/Shared.module.css";
 
@@ -19,7 +20,19 @@ export default function FaqPage() {
         compact
         eyebrow="Perguntas frequentes"
         title="Tire suas dúvidas antes do primeiro treino."
-        text="Reunimos aqui as perguntas mais comuns de quem está chegando ao Mushinkan. Se a sua não estiver na lista, é só chamar no WhatsApp."
+        text={
+          <>
+            Reunimos aqui as perguntas mais comuns de quem está chegando ao
+            Mushinkan. Se a sua não estiver na lista, é só chamar no{" "}
+            <a
+              className={sharedStyles.inlineLink}
+              href={siteInfo.whatsappExperimental}
+            >
+              WhatsApp
+            </a>
+            .
+          </>
+        }
       />
 
       <section className={sharedStyles.sectionTight}>
@@ -28,7 +41,9 @@ export default function FaqPage() {
           {faqs.map((faq) => (
             <article className={pageStyles.faqItem} key={faq.question}>
               <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
+              <p>
+                <FaqAnswer faq={faq} />
+              </p>
             </article>
           ))}
         </div>
