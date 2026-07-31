@@ -47,7 +47,7 @@
 }
 
 .scrolled {
-  --current-header-height: 64px;
+  --current-header-height: var(--header-height-scrolled);
 }
 
 .scrolled::before {
@@ -400,10 +400,6 @@
 }
 
 @media (max-width: 960px) {
-  .scrolled {
-    --current-header-height: 58px;
-  }
-
   .logoH {
     height: 44px;
   }

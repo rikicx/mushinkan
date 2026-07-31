@@ -186,6 +186,34 @@
   }
 }
 
+@media (min-width: 701px) and (max-width: 960px) {
+  .featuredSensei {
+    min-height: 360px;
+    grid-template-columns: minmax(280px, 42%) minmax(0, 1fr);
+  }
+
+  .featuredSenseiImage {
+    min-height: 360px;
+  }
+
+  .leadGrid {
+    grid-auto-rows: 300px;
+  }
+
+  .leadCard {
+    height: 300px;
+    grid-template-columns: minmax(220px, 34%) minmax(0, 1fr);
+  }
+
+  .leadImage {
+    min-height: 0;
+  }
+
+  .leadBody {
+    padding: 24px 28px;
+  }
+}
+
 @media (max-width: 700px) {
   .featuredSensei {
     grid-template-columns: 1fr;

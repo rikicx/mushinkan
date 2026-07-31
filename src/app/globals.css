@@ -32,6 +32,7 @@
   --duration-fast: 160ms;
 
   --header-height: 88px;
+  --header-height-scrolled: 64px;
   --container: 1184px;
   --container-wide: 1280px;
   --gutter: clamp(20px, 4vw, 48px);
@@ -45,6 +46,7 @@
 @media (max-width: 960px) {
   :root {
     --header-height: 70px;
+    --header-height-scrolled: 58px;
   }
 }
 

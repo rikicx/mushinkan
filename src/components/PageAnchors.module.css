@@ -5,7 +5,7 @@
 @media (max-width: 960px) {
   .nav {
     position: sticky;
-    top: var(--header-height);
+    top: var(--header-height-scrolled);
     z-index: 30;
     display: block;
     border-bottom: 1px solid var(--color-line-soft);

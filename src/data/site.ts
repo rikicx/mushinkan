@@ -568,7 +568,7 @@ export const senseis: Sensei[] = [
     summary:
       "Principal referência técnica e institucional do dojo e primeiro brasileiro a alcançar o 7º Dan JKA. Treina e ensina Karate Shotokan há cerca de 50 anos, foi campeão paulista, brasileiro e sul-americano e treinou com o Sensei Taketo Okuda por mais de 20 anos.",
     image: "/images/sensei-carlos-rocha.webp",
-    imagePosition: "center 28%"
+    imagePosition: "center"
   },
   {
     name: "Márcio Adami Santos",
@@ -581,7 +581,7 @@ export const senseis: Sensei[] = [
     summary:
       "Responsável pela condução cotidiana do Mushinkan e por grande parte dos treinos. Pratica Karate Shotokan há mais de 30 anos, é instrutor formado pela Escola de Karate-Do do Brasil, foi campeão brasileiro de kumite por equipes em 2017 e vice-campeão brasileiro master de kumite em 2024.",
     image: "/images/sensei-marcio-adami.webp",
-    imagePosition: "center 32%"
+    imagePosition: "center"
   },
   {
     name: "Leandro Romero",
