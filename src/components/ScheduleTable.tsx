@@ -80,21 +80,11 @@ export function ScheduleTable() {
       <div className={styles.next}>
         <span className={styles.nextLabel}>
           <span className={styles.dot} />
-          {live?.current ? "Agora no tatame" : "Próxima aula"}
+          Próxima aula
         </span>
         <span className={styles.nextInfo}>
           {live ? (
-            live.current ? (
-              <>
-                <strong>
-                  {live.current.startTime} às {live.current.endTime}
-                </strong>{" "}
-                · {live.current.className}
-                {live.current.level !== live.current.className
-                  ? ` · ${live.current.level}`
-                  : null}
-              </>
-            ) : live.next ? (
+            live.next ? (
               <>
                 <strong>
                   {live.next.startTime} às {live.next.endTime}
@@ -110,7 +100,7 @@ export function ScheduleTable() {
           )}
         </span>
         <ButtonLink href={siteInfo.whatsappExperimental}>
-          Quero participar desta aula
+          Quero participar da próxima aula
         </ButtonLink>
       </div>
 

@@ -59,6 +59,50 @@
   text-transform: uppercase;
 }
 
+.credentialList {
+  display: grid;
+  margin: 12px 0 0;
+  border-top: 1px solid var(--color-line-soft);
+}
+
+.credentialItem {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.9fr) minmax(0, 1.1fr);
+  gap: 16px;
+  align-items: baseline;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-line-soft);
+}
+
+.credentialItem dt {
+  color: var(--color-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.credentialItem dd {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.cardBody > .credentialList,
+.leadBody .credentialList {
+  grid-template-columns: 1fr;
+}
+
+.cardBody > .credentialList .credentialItem,
+.leadBody .credentialItem {
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
 .card p {
   margin: 0;
   color: var(--color-muted);

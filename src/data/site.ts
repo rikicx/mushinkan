@@ -21,7 +21,10 @@ export type ClassGroup = {
 
 export type Sensei = {
   name: string;
-  grade: ConfirmableValue;
+  credentials: Array<{
+    label: string;
+    value: string;
+  }>;
   role: string;
   tier: "featured" | "lead" | "support";
   summary: string;
@@ -387,27 +390,19 @@ export const scheduleRows: ScheduleRow[] = [
   },
   {
     period: "Manhã",
-    time: "09:30 às 10:30",
-    startTime: "09:30",
-    endTime: "10:30",
+    time: "10:00 às 11:00",
+    startTime: "10:00",
+    endTime: "11:00",
     tuesday: {
       className: "Infantil",
-      label: "Todos os níveis",
+      label: "Infantil",
       tone: "children"
     },
     thursday: {
       className: "Infantil",
-      label: "Todos os níveis",
+      label: "Infantil",
       tone: "children"
     }
-  },
-  {
-    period: "Manhã",
-    time: "10:30 às 11:30",
-    startTime: "10:30",
-    endTime: "11:30",
-    tuesday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
-    thursday: { className: "Adulto", label: "Todos os Níveis", tone: "all" }
   },
   {
     period: "Tarde",
@@ -425,23 +420,14 @@ export const scheduleRows: ScheduleRow[] = [
     endTime: "17:40",
     tuesday: {
       className: "Infantil",
-      label: "Todos os níveis",
+      label: "Infantil",
       tone: "children"
     },
     thursday: {
       className: "Infantil",
-      label: "Todos os níveis",
+      label: "Infantil",
       tone: "children"
     }
-  },
-  {
-    period: "Tarde",
-    time: "17:00 às 18:00",
-    startTime: "17:00",
-    endTime: "18:00",
-    monday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
-    wednesday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
-    friday: { className: "Adulto", label: "Todos os Níveis", tone: "all" }
   },
   {
     period: "Noite",
@@ -468,7 +454,11 @@ export const scheduleRows: ScheduleRow[] = [
     startTime: "19:00",
     endTime: "20:00",
     monday: { className: "Adulto", label: "Avançado", tone: "advanced" },
-    tuesday: { className: "Adulto", label: "Avançado", tone: "advanced" },
+    tuesday: {
+      className: "Adulto",
+      label: "Intermed/Avançado",
+      tone: "mixed"
+    },
     wednesday: { className: "Adulto", label: "Avançado", tone: "advanced" },
     thursday: { className: "Adulto", label: "Avançado", tone: "advanced" },
     friday: { className: "Adulto", label: "Avançado", tone: "advanced" }
@@ -559,10 +549,10 @@ export function findScheduleStatus(weekday: number, minutes: number) {
 export const senseis: Sensei[] = [
   {
     name: "Carlos Rocha",
-    grade: {
-      value: "7º Dan JKA",
-      state: "confirmed"
-    },
+    credentials: [
+      { label: "Graduação JKA", value: "7º Dan" },
+      { label: "Credenciamento JKA", value: "Examinador Special Rights" }
+    ],
     role: "Instrutor chefe",
     tier: "featured",
     summary:
@@ -572,23 +562,20 @@ export const senseis: Sensei[] = [
   },
   {
     name: "Márcio Adami Santos",
-    grade: {
-      value: "3º Dan JKA",
-      state: "confirmed"
-    },
-    role: "Instrutor responsável pelo dojo",
+    credentials: [
+      { label: "Graduação JKA", value: "3º Dan" },
+      { label: "Graduação Mushinkan", value: "4º Dan · desde 2016" }
+    ],
+    role: "Instrutor",
     tier: "featured",
     summary:
-      "Responsável pela condução cotidiana do Mushinkan e por grande parte dos treinos. Pratica Karate Shotokan há mais de 30 anos, é instrutor formado pela Escola de Karate-Do do Brasil, foi campeão brasileiro de kumite por equipes em 2017 e vice-campeão brasileiro master de kumite em 2024.",
+      "Pratica Karate Shotokan há mais de 30 anos e é instrutor formado pela Escola de Karate-Do do Brasil. Foi campeão brasileiro de kumite em 2017 e vice-campeão brasileiro de kumite em 2024.",
     image: "/images/sensei-marcio-adami.webp",
     imagePosition: "center"
   },
   {
     name: "Leandro Romero",
-    grade: {
-      value: "3º Dan JKA",
-      state: "confirmed"
-    },
+    credentials: [{ label: "Graduação JKA", value: "3º Dan" }],
     role: "Instrutor",
     tier: "lead",
     summary:
@@ -597,10 +584,10 @@ export const senseis: Sensei[] = [
   },
   {
     name: "Alexandre Rollo",
-    grade: {
-      value: "1º Dan JKA",
-      state: "confirmed"
-    },
+    credentials: [
+      { label: "Graduação JKA", value: "1º Dan" },
+      { label: "Graduação Mushinkan", value: "3º Dan" }
+    ],
     role: "Instrutor",
     tier: "support",
     summary:
@@ -610,14 +597,11 @@ export const senseis: Sensei[] = [
   },
   {
     name: "Henri Kenzo Taniguti",
-    grade: {
-      value: "3º Dan JKA",
-      state: "confirmed"
-    },
+    credentials: [{ label: "Graduação JKA", value: "3º Dan" }],
     role: "Instrutor",
     tier: "support",
     summary:
-      "Aluno do Sensei Carlos Rocha desde 2000 e 3º Dan JKA desde 2024. Campeão paulista de kata e kumite na categoria Master I em 2023.",
+      "Aluno do Sensei Carlos Rocha desde 2000. Campeão paulista de kata e kumite na categoria Master I em 2023.",
     image: "/images/sensei-kenzo-taniguti.webp"
   }
 ];

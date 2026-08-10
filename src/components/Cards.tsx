@@ -5,6 +5,19 @@ import { MediaBlock } from "./MediaBlock";
 import sharedStyles from "./Shared.module.css";
 import styles from "./Cards.module.css";
 
+function SenseiCredentials({ sensei }: { sensei: Sensei }) {
+  return (
+    <dl className={styles.credentialList}>
+      {sensei.credentials.map((credential) => (
+        <div className={styles.credentialItem} key={credential.label}>
+          <dt>{credential.label}</dt>
+          <dd>{credential.value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
 export function ClassCard({ group }: { group: ClassGroup }) {
   return (
     <article className={styles.card}>
@@ -52,8 +65,8 @@ export function SenseiCard({ sensei }: { sensei: Sensei }) {
       />
       <div className={styles.cardBody}>
         <h3>{sensei.name}</h3>
-        <div className={styles.meta}>{sensei.grade.value}</div>
-        <p>{sensei.role}</p>
+        <div className={styles.meta}>{sensei.role}</div>
+        <SenseiCredentials sensei={sensei} />
       </div>
     </article>
   );
@@ -81,9 +94,8 @@ export function FeaturedSensei({ sensei }: { sensei: Sensei }) {
       <div className={styles.featuredSenseiBody}>
         <p className={styles.personLabel}>Sensei</p>
         <h3>{sensei.name}</h3>
-        <div className={styles.meta}>
-          {sensei.grade.value} · {sensei.role}
-        </div>
+        <div className={styles.meta}>{sensei.role}</div>
+        <SenseiCredentials sensei={sensei} />
         <p>{sensei.summary}</p>
       </div>
     </article>
@@ -118,9 +130,8 @@ export function InstructorGrid({ people }: { people: Sensei[] }) {
             <div>
               <p className={styles.personLabel}>Sensei</p>
               <h3>{sensei.name}</h3>
-              <div className={styles.meta}>
-                {sensei.grade.value} · {sensei.role}
-              </div>
+              <div className={styles.meta}>{sensei.role}</div>
+              <SenseiCredentials sensei={sensei} />
             </div>
             <p>{sensei.summary}</p>
           </div>
