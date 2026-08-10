@@ -564,7 +564,7 @@ export const senseis: Sensei[] = [
     name: "Márcio Adami Santos",
     credentials: [
       { label: "Graduação JKA", value: "3º Dan" },
-      { label: "Graduação Mushinkan", value: "4º Dan · desde 2016" }
+      { label: "Graduação Mushinkan", value: "4º Dan" }
     ],
     role: "Instrutor",
     tier: "featured",
