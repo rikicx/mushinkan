@@ -603,6 +603,20 @@ export const senseis: Sensei[] = [
     summary:
       "Aluno do Sensei Carlos Rocha desde 2000. Campeão paulista de kata e kumite na categoria Master I em 2023.",
     image: "/images/sensei-kenzo-taniguti.webp"
+  },
+  {
+    name: "Mario Meirelles",
+    credentials: [
+      { label: "Graduação JKA", value: "1º Dan" },
+      { label: "Graduação Mushinkan", value: "3º Dan" },
+      { label: "Graduação Butokukan", value: "1º Dan" }
+    ],
+    role: "Instrutor",
+    tier: "support",
+    summary:
+      "Praticante de Karate desde os 8 anos de idade. Graduou-se faixa preta com o Sensei Taketo Okuda na Academia Butokukan em 1996 e continuou seu treinamento com o Sensei Carlos Rocha na Mushinkan. Participou de cursos de aperfeiçoamento no Hombu Dojo, em Tóquio, em 2023 e 2025.",
+    image: "/images/sensei-mario-meirelles.webp",
+    imagePosition: "center 42%"
   }
 ];
 
