@@ -61,6 +61,7 @@ export function SenseiCard({ sensei }: { sensei: Sensei }) {
         className={styles.senseiImage}
         label={`Retrato · ${sensei.name}`}
         objectPosition={sensei.imagePosition}
+        imageScale={sensei.imageScale}
         src={sensei.image}
       />
       <div className={styles.cardBody}>
@@ -89,6 +90,7 @@ export function FeaturedSensei({ sensei }: { sensei: Sensei }) {
         className={styles.featuredSenseiImage}
         label={`Retrato · ${sensei.name}`}
         objectPosition={sensei.imagePosition}
+        imageScale={sensei.imageScale}
         src={sensei.image}
       />
       <div className={styles.featuredSenseiBody}>
@@ -124,6 +126,7 @@ export function InstructorGrid({ people }: { people: Sensei[] }) {
             className={styles.leadImage}
             label={`Retrato · ${sensei.name}`}
             objectPosition={sensei.imagePosition}
+            imageScale={sensei.imageScale}
             src={sensei.image}
           />
           <div className={`${styles.cardBody} ${styles.leadBody}`}>

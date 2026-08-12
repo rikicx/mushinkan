@@ -5,15 +5,29 @@ type MediaBlockProps = {
   src?: string;
   className?: string;
   objectPosition?: string;
+  imageScale?: number;
 };
 
 export function MediaBlock({
   label,
   src,
   className,
-  objectPosition
+  objectPosition,
+  imageScale
 }: MediaBlockProps) {
   const classes = [styles.media, className].filter(Boolean).join(" ");
+  const imageStyle =
+    objectPosition || imageScale
+      ? {
+          ...(objectPosition ? { objectPosition } : {}),
+          ...(imageScale
+            ? {
+                transform: `scale(${imageScale})`,
+                transformOrigin: objectPosition || "center"
+              }
+            : {})
+        }
+      : undefined;
 
   return (
     <div className={classes}>
@@ -22,7 +36,7 @@ export function MediaBlock({
           src={src}
           alt={label}
           loading="lazy"
-          style={objectPosition ? { objectPosition } : undefined}
+          style={imageStyle}
         />
       ) : (
         <span className={styles.mediaLabel}>{label}</span>
