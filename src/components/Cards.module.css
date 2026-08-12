@@ -65,14 +65,16 @@
   border-top: 1px solid var(--color-line-soft);
 }
 
-.graduationGroup {
+.graduationGroup,
+.credentialGroup {
   display: grid;
   gap: 10px;
   padding: 9px 0;
   border-bottom: 1px solid var(--color-line-soft);
 }
 
-.graduationGroup dt {
+.graduationGroup dt,
+.credentialGroup dt {
   color: var(--color-subtle);
   font-family: var(--font-mono);
   font-size: 0.6rem;
@@ -82,7 +84,8 @@
   text-transform: uppercase;
 }
 
-.graduationGroup dd {
+.graduationGroup dd,
+.credentialGroup dd {
   margin: 0;
 }
 

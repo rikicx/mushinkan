@@ -29,9 +29,13 @@ function SenseiCredentials({ sensei }: { sensei: Sensei }) {
         </div>
       ) : null}
       {otherCredentials.map((credential) => (
-        <div className={styles.credentialItem} key={credential.label}>
+        <div className={styles.credentialGroup} key={credential.label}>
           <dt>{credential.label}</dt>
-          <dd>{credential.value}</dd>
+          <dd className={styles.credentialBadges}>
+            <span className={styles.credentialBadge}>
+              <strong>{credential.value}</strong>
+            </span>
+          </dd>
         </div>
       ))}
     </dl>
