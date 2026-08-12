@@ -618,7 +618,7 @@ export const senseis: Sensei[] = [
       "Praticante de Karate desde os 8 anos de idade. Graduou-se faixa preta com o Sensei Taketo Okuda na Academia Butokukan em 1996 e continuou seu treinamento com o Sensei Carlos Rocha na Mushinkan. Participou de cursos de aperfeiçoamento no Hombu Dojo, em Tóquio, em 2023 e 2025.",
     image: "/images/sensei-mario-meirelles.webp",
     imagePosition: "center 42%",
-    imageScale: 1.35
+    imageScale: 1.6
   }
 ];
 
