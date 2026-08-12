@@ -6,9 +6,29 @@ import sharedStyles from "./Shared.module.css";
 import styles from "./Cards.module.css";
 
 function SenseiCredentials({ sensei }: { sensei: Sensei }) {
+  const graduations = sensei.credentials.filter((credential) =>
+    credential.label.startsWith("Graduação")
+  );
+  const otherCredentials = sensei.credentials.filter(
+    (credential) => !credential.label.startsWith("Graduação")
+  );
+
   return (
     <dl className={styles.credentialList}>
-      {sensei.credentials.map((credential) => (
+      {graduations.length > 0 ? (
+        <div className={styles.graduationGroup}>
+          <dt>Graduação</dt>
+          <dd className={styles.credentialBadges}>
+            {graduations.map((credential) => (
+              <span className={styles.credentialBadge} key={credential.label}>
+                <strong>{credential.value}</strong>
+                <span>{credential.label.replace(/^Graduação\s*/, "")}</span>
+              </span>
+            ))}
+          </dd>
+        </div>
+      ) : null}
+      {otherCredentials.map((credential) => (
         <div className={styles.credentialItem} key={credential.label}>
           <dt>{credential.label}</dt>
           <dd>{credential.value}</dd>

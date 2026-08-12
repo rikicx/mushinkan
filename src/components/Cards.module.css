@@ -65,6 +65,60 @@
   border-top: 1px solid var(--color-line-soft);
 }
 
+.graduationGroup {
+  display: grid;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-line-soft);
+}
+
+.graduationGroup dt {
+  color: var(--color-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.graduationGroup dd {
+  margin: 0;
+}
+
+.credentialBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.credentialBadge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 5px 8px;
+  border: 1px solid var(--color-line-soft);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.credentialBadge strong {
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.credentialBadge span {
+  color: var(--color-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .credentialItem {
   display: grid;
   grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
@@ -200,14 +254,14 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   margin-top: 24px;
-  grid-auto-rows: clamp(286px, 21vw, 338px);
+  grid-auto-rows: clamp(358px, 26.25vw, 423px);
 }
 
 .leadCard {
   display: grid;
   min-width: 0;
   grid-template-columns: 30% minmax(0, 1fr);
-  height: clamp(286px, 21vw, 338px);
+  height: clamp(358px, 26.25vw, 423px);
   overflow: hidden;
 }
 
@@ -248,11 +302,11 @@
   }
 
   .leadGrid {
-    grid-auto-rows: 300px;
+    grid-auto-rows: 375px;
   }
 
   .leadCard {
-    height: 300px;
+    height: 375px;
     grid-template-columns: 30% minmax(0, 1fr);
   }
 
@@ -266,6 +320,15 @@
 }
 
 @media (max-width: 700px) {
+  .leadGrid {
+    grid-auto-rows: auto;
+  }
+
+  .leadCard {
+    height: auto;
+    min-height: 360px;
+  }
+
   .featuredSensei {
     grid-template-columns: 1fr;
     height: auto;
@@ -292,6 +355,7 @@
   }
 
   .leadImage {
+    height: auto;
     min-height: 280px;
   }
 
