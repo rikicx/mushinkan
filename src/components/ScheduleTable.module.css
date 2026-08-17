@@ -226,8 +226,8 @@
 }
 
 .nextHome {
-  width: min(100%, 960px);
-  margin: 32px auto 0;
+  width: 100%;
+  margin: 32px 0 0;
 }
 
 .dot {
