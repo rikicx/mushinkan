@@ -6,6 +6,7 @@ import { FaqAnswer } from "@/components/FaqAnswer";
 import { HeroMedia } from "@/components/HeroMedia";
 import { LocationSection } from "@/components/LocationSection";
 import { MediaBlock } from "@/components/MediaBlock";
+import { NextClass } from "@/components/NextClass";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import {
@@ -95,6 +96,7 @@ export default function Home() {
             }
           />
           <ClassGrid groups={classGroups} />
+          <NextClass centered />
         </Reveal>
       </section>
 

@@ -225,6 +225,11 @@
   padding: 18px;
 }
 
+.nextHome {
+  width: min(100%, 960px);
+  margin: 32px auto 0;
+}
+
 .dot {
   position: relative;
   width: 8px;

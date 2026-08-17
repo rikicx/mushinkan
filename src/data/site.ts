@@ -372,19 +372,30 @@ export const classGroups: ClassGroup[] = [
 export const scheduleRows: ScheduleRow[] = [
   {
     period: "Manhã",
+    time: "06:00 às 07:00",
+    startTime: "06:00",
+    endTime: "07:00",
+    monday: {
+      className: "Adulto",
+      label: "Intermed/Avançado",
+      tone: "mixed"
+    }
+  },
+  {
+    period: "Manhã",
     time: "07:00 às 08:00",
     startTime: "07:00",
     endTime: "08:00",
     monday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
     tuesday: {
       className: "Adulto",
-      label: "Intermediário / Avançado",
+      label: "Intermed/Avançado",
       tone: "mixed"
     },
     wednesday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
     thursday: {
       className: "Adulto",
-      label: "Intermediário / Avançado",
+      label: "Intermed/Avançado",
       tone: "mixed"
     },
     friday: { className: "Adulto", label: "Avançado", tone: "advanced" }
@@ -438,13 +449,13 @@ export const scheduleRows: ScheduleRow[] = [
     monday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
     tuesday: {
       className: "Adulto",
-      label: "Intermediário / Avançado",
+      label: "Intermed/Avançado",
       tone: "mixed"
     },
     wednesday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
     thursday: {
       className: "Adulto",
-      label: "Intermediário / Avançado",
+      label: "Intermed/Avançado",
       tone: "mixed"
     },
     friday: { className: "Adulto", label: "Todos os Níveis", tone: "all" }
@@ -457,8 +468,8 @@ export const scheduleRows: ScheduleRow[] = [
     monday: { className: "Adulto", label: "Avançado", tone: "advanced" },
     tuesday: {
       className: "Adulto",
-      label: "Intermed/Avançado",
-      tone: "mixed"
+      label: "Avançado",
+      tone: "advanced"
     },
     wednesday: { className: "Adulto", label: "Avançado", tone: "advanced" },
     thursday: { className: "Adulto", label: "Avançado", tone: "advanced" },
@@ -470,7 +481,11 @@ export const scheduleRows: ScheduleRow[] = [
     startTime: "20:10",
     endTime: "21:10",
     monday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
-    tuesday: { className: "Adulto", label: "Avançado", tone: "advanced" },
+    tuesday: {
+      className: "Adulto",
+      label: "Intermed/Avançado",
+      tone: "mixed"
+    },
     wednesday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
     thursday: { className: "Adulto", label: "Avançado", tone: "advanced" }
   }
