@@ -392,7 +392,6 @@ export const scheduleRows: ScheduleRow[] = [
       label: "Intermed/Avançado",
       tone: "mixed"
     },
-    wednesday: { className: "Adulto", label: "Todos os Níveis", tone: "all" },
     thursday: {
       className: "Adulto",
       label: "Intermed/Avançado",
