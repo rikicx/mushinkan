@@ -5,7 +5,7 @@ import styles from "./SiteFooter.module.css";
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.inner}>
+      <div className={styles.inner} data-nosnippet>
         <div>
           <img
             alt="Mushinkan"
@@ -52,11 +52,11 @@ export function SiteFooter() {
 
         <a
           className={styles.credit}
-          href="https://henriquesilva.design/?utm_source=mushinkan&utm_medium=referral&utm_campaign=mushinkan_website&utm_content=footer_credit"
+          href="https://fabricasdesites.com/?utm_source=mushinkan&utm_medium=referral&utm_campaign=mushinkan_website&utm_content=footer_credit"
           rel="noopener noreferrer"
           target="_blank"
         >
-          henriquesilva.design
+          Produzido pela Fábrica de Sites
         </a>
       </div>
     </footer>

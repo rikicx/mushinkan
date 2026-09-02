@@ -1,17 +1,18 @@
-import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { PageAnchors } from "@/components/PageAnchors";
 import { PageHero } from "@/components/PageHero";
 import { siteInfo } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 import pageStyles from "@/app/pages.module.css";
 import sharedStyles from "@/components/Shared.module.css";
 import contactStyles from "./Contact.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contato",
   description:
-    "Fale com o Dojo Mushinkan pelo WhatsApp e veja endereço, mapa e redes sociais."
-};
+    "Fale com o Dojo Mushinkan pelo WhatsApp e veja endereço, mapa e como chegar ao dojo na Vila Mariana, São Paulo.",
+  path: "/contato"
+});
 
 export default function ContactPage() {
   return (

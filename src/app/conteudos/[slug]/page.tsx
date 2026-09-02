@@ -10,6 +10,7 @@ import {
   getContentArticle,
   siteInfo
 } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 import pageStyles from "@/app/pages.module.css";
 import sharedStyles from "@/components/Shared.module.css";
 
@@ -31,10 +32,11 @@ export async function generateMetadata({
     return {};
   }
 
-  return {
+  return createPageMetadata({
     title: article.title,
-    description: article.description
-  };
+    description: article.description,
+    path: `/conteudos/${article.slug}`
+  });
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {

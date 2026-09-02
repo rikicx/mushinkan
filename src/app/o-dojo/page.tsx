@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { RouteTransitionLink as Link } from "@/components/RouteTransitionLink";
 import { FeaturedSenseiList, InstructorGrid } from "@/components/Cards";
@@ -7,14 +6,16 @@ import { PageAnchors } from "@/components/PageAnchors";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { senseis } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 import pageStyles from "@/app/pages.module.css";
 import sharedStyles from "@/components/Shared.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "O Dojo",
   description:
-    "A história, a tradição e os instrutores do Dojo Mushinkan, escola de Karate Shotokan tradicional na Vila Mariana, São Paulo."
-};
+    "Conheça a história, a tradição e os instrutores do Dojo Mushinkan, escola de Karate Shotokan tradicional na Vila Mariana, São Paulo.",
+  path: "/o-dojo"
+});
 
 export default function DojoPage() {
   const featuredInstructors = senseis.filter(

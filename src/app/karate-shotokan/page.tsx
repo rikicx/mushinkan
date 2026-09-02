@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CTASection } from "@/components/CTASection";
 import { MediaBlock } from "@/components/MediaBlock";
@@ -6,14 +5,16 @@ import { PageAnchors } from "@/components/PageAnchors";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { benefits, methodPillars, siteInfo } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 import pageStyles from "@/app/pages.module.css";
 import sharedStyles from "@/components/Shared.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Karate Shotokan",
   description:
-    "Origens, filosofia, metodologia e benefícios do Karate Shotokan."
-};
+    "Conheça as origens, a filosofia, o método e os benefícios do Karate Shotokan tradicional praticado no Dojo Mushinkan.",
+  path: "/karate-shotokan"
+});
 
 const timeline = [
   ["1868", "Gichin Funakoshi nasce em Shuri, Okinawa."],

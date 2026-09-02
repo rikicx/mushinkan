@@ -7,7 +7,12 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { FloatingActions } from "@/components/FloatingActions";
 import { GooglePageView } from "@/components/GooglePageView";
-import { siteInfo } from "@/data/site";
+import {
+  homeDescription,
+  homeTitle,
+  seoStructuredData,
+  siteUrl
+} from "@/lib/seo";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -18,18 +23,23 @@ const archivo = Archivo({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mushinkan Karate-Do",
+    default: homeTitle,
     template: "%s | Mushinkan"
   },
-  description:
-    "Dojo de Karate Shotokan tradicional na Vila Mariana, São Paulo.",
-  metadataBase: new URL("https://mushinkan.com.br"),
-  openGraph: {
-    title: "Mushinkan Karate-Do",
-    description:
-      "Tradição, disciplina e evolução através do Karate Shotokan.",
-    locale: "pt_BR",
-    type: "website"
+  description: homeDescription,
+  metadataBase: new URL(siteUrl),
+  applicationName: "Mushinkan",
+  category: "sports",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
   }
 };
 
@@ -46,7 +56,7 @@ export default function RootLayout({
     >
       <body>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-M6JN0885HM"
+          src="https://www.googletagmanager.com/gtag/js?id=G-J111E9DTPL"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -54,7 +64,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-M6JN0885HM', { send_page_view: false });
+            gtag('config', 'G-J111E9DTPL', { send_page_view: false });
           `}
         </Script>
         <GooglePageView />
@@ -69,14 +79,7 @@ export default function RootLayout({
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "SportsActivityLocation",
-                name: siteInfo.fullName,
-                address: `${siteInfo.address}, ${siteInfo.district}, ${siteInfo.city}`,
-                telephone: siteInfo.whatsappDisplay,
-                url: "https://mushinkan.com.br"
-              })
+              __html: JSON.stringify(seoStructuredData)
             }}
           />
         </RouteTransitionProvider>

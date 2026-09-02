@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import { ContentGrid } from "@/components/Cards";
 import { CTASection } from "@/components/CTASection";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { contentPosts } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 import sharedStyles from "@/components/Shared.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Conteúdos",
   description:
-    "Artigos sobre história, filosofia, benefícios e prática do Karate Shotokan."
-};
+    "Artigos do Mushinkan sobre história, filosofia, benefícios e prática do Karate Shotokan tradicional.",
+  path: "/conteudos"
+});
 
 export default function ContentPage() {
   return (

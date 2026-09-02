@@ -18,8 +18,14 @@ import {
   methodPillars,
   siteInfo
 } from "@/data/site";
+import { createPageMetadata, homeDescription } from "@/lib/seo";
 import pageStyles from "./pages.module.css";
 import sharedStyles from "@/components/Shared.module.css";
+
+export const metadata = createPageMetadata({
+  description: homeDescription,
+  path: "/"
+});
 
 export default function Home() {
   return (

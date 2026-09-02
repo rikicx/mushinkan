@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { RouteTransitionLink as Link } from "@/components/RouteTransitionLink";
 import { ClassGrid } from "@/components/Cards";
@@ -9,14 +8,16 @@ import { PageHero } from "@/components/PageHero";
 import { ScheduleTable } from "@/components/ScheduleTable";
 import { SectionHeading } from "@/components/SectionHeading";
 import { classGroups, siteInfo } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 import pageStyles from "@/app/pages.module.css";
 import sharedStyles from "@/components/Shared.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Aulas e Horários",
   description:
-    "Turmas e horários de Karate Shotokan do Dojo Mushinkan na Vila Mariana."
-};
+    "Confira turmas e horários de Karate Shotokan para crianças e adultos no Dojo Mushinkan, na Vila Mariana, São Paulo.",
+  path: "/aulas-e-horarios"
+});
 
 export default function ClassesPage() {
   return (

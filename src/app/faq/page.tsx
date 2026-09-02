@@ -1,17 +1,18 @@
-import type { Metadata } from "next";
 import { CTASection } from "@/components/CTASection";
 import { FaqAnswer } from "@/components/FaqAnswer";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { faqs, siteInfo } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 import pageStyles from "@/app/pages.module.css";
 import sharedStyles from "@/components/Shared.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Perguntas frequentes",
   description:
-    "Tire suas dúvidas sobre aulas, horários, turmas e a aula experimental do Dojo Mushinkan."
-};
+    "Tire suas dúvidas sobre aulas, horários, turmas e a aula experimental de Karate Shotokan no Dojo Mushinkan.",
+  path: "/faq"
+});
 
 export default function FaqPage() {
   return (
