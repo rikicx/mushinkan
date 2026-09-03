@@ -6,6 +6,7 @@ type SectionHeadingProps = {
   text?: string;
   action?: React.ReactNode;
   style?: React.CSSProperties;
+  fullWidth?: boolean;
 };
 
 export function SectionHeading({
@@ -13,11 +14,14 @@ export function SectionHeading({
   title,
   text,
   action,
-  style
+  style,
+  fullWidth = false
 }: SectionHeadingProps) {
   return (
     <div className={styles.sectionHeading} style={style}>
-      <div className={styles.sectionHeadingText}>
+      <div
+        className={`${styles.sectionHeadingText} ${fullWidth ? styles.sectionHeadingTextFull : ""}`}
+      >
         {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
         <h2>{title}</h2>
         {text ? <p>{text}</p> : null}

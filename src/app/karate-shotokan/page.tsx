@@ -140,7 +140,8 @@ export default function ShotokanPage() {
           <SectionHeading
             eyebrow="Benefícios"
             title="O que a prática desenvolve."
-            text="O conteúdo atual lista benefícios físicos, mentais, emocionais e sociais. Aqui eles viram uma leitura enxuta."
+            text="O Karate desenvolve força, coordenação, concentração, disciplina e confiança, dentro e fora do dojo."
+            fullWidth
           />
           <div className={pageStyles.benefitList}>
             {benefits.map((benefit) => (

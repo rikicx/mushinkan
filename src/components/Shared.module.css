@@ -38,6 +38,11 @@
   max-width: 720px;
 }
 
+.sectionHeadingTextFull {
+  width: 100%;
+  max-width: none;
+}
+
 .sectionHeading h2,
 .simpleHeading h2 {
   margin: 0;
