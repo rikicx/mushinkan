@@ -64,7 +64,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-J111E9DTPL', { send_page_view: false });
+            gtag('config', 'G-J111E9DTPL');
           `}
         </Script>
         <GooglePageView />

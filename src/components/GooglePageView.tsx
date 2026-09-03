@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 declare global {
   interface Window {
@@ -12,9 +12,15 @@ declare global {
 
 export function GooglePageView() {
   const pathname = usePathname();
+  const isInitialPage = useRef(true);
 
   useEffect(() => {
     if (!pathname) {
+      return;
+    }
+
+    if (isInitialPage.current) {
+      isInitialPage.current = false;
       return;
     }
 
