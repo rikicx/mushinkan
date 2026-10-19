@@ -52,11 +52,11 @@ export function SiteFooter() {
 
         <a
           className={styles.credit}
-          href="https://fabricasdesites.com/?utm_source=mushinkan&utm_medium=referral&utm_campaign=mushinkan_website&utm_content=footer_credit"
+          href="https://henriquesilva.design/?utm_source=mushinkan&utm_medium=referral&utm_campaign=mushinkan_website&utm_content=footer_credit"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Produzido pela Fábrica de Sites
+          henriquesilva.design
         </a>
       </div>
     </footer>
