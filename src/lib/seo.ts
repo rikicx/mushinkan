@@ -13,16 +13,27 @@ const socialImage = {
   alt: "Instrutores e alunos do Dojo Mushinkan no tatame"
 };
 
+type SocialImage = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
 type PageMetadataInput = {
   title?: string;
   description: string;
   path: string;
+  image?: SocialImage;
+  type?: "website" | "article";
 };
 
 export function createPageMetadata({
   title,
   description,
-  path
+  path,
+  image = socialImage,
+  type = "website"
 }: PageMetadataInput): Metadata {
   const socialTitle = title ? `${title} | ${siteInfo.name}` : homeTitle;
 
@@ -38,14 +49,14 @@ export function createPageMetadata({
       url: path,
       siteName: siteInfo.name,
       locale: "pt_BR",
-      type: "website",
-      images: [socialImage]
+      type,
+      images: [image]
     },
     twitter: {
       card: "summary_large_image",
       title: socialTitle,
       description,
-      images: [socialImage.url]
+      images: [image.url]
     }
   };
 }

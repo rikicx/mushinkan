@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { pressPosts } from "@/data/press";
 import { contentPosts } from "@/data/site";
 import { siteUrl } from "@/lib/seo";
 
@@ -21,11 +22,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7
     },
+    {
+      url: `${siteUrl}/conteudos/acervo`,
+      changeFrequency: "monthly",
+      priority: 0.6
+    },
     { url: `${siteUrl}/contato`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/faq`, changeFrequency: "monthly", priority: 0.6 }
   ];
 
-  const articles: MetadataRoute.Sitemap = contentPosts.map((post) => ({
+  const articles: MetadataRoute.Sitemap = [...contentPosts, ...pressPosts].map((post) => ({
     url: `${siteUrl}${post.href}`,
     changeFrequency: "monthly",
     priority: 0.6

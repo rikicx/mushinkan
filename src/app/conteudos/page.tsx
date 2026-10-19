@@ -1,7 +1,9 @@
+import { ButtonLink } from "@/components/ButtonLink";
 import { ContentGrid } from "@/components/Cards";
 import { CTASection } from "@/components/CTASection";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
+import { pressPosts } from "@/data/press";
 import { contentPosts } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
 import sharedStyles from "@/components/Shared.module.css";
@@ -31,6 +33,22 @@ export default function ContentPage() {
             text="Três leituras fundamentais para conhecer as origens, os princípios e os benefícios da prática."
           />
           <ContentGrid posts={contentPosts} />
+        </div>
+      </section>
+
+      <section className={sharedStyles.sectionTight} id="acervo">
+        <div className={sharedStyles.wideContainer}>
+          <SectionHeading
+            eyebrow="Acervo de imprensa"
+            title="O Sensei Carlos Rocha nos jornais e revistas."
+            text="Reportagens de 1976 a 2001, com o recorte original e a transcrição completa."
+            action={
+              <ButtonLink href="/conteudos/acervo" variant="secondary">
+                Ver acervo completo
+              </ButtonLink>
+            }
+          />
+          <ContentGrid posts={pressPosts.slice(0, 3)} />
         </div>
       </section>
 

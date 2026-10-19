@@ -311,6 +311,12 @@ export const navItems = [
         href: "/conteudos/beneficios-do-karate",
         description:
           "Entenda o que a prática desenvolve no corpo, na mente e no convívio."
+      },
+      {
+        label: "Acervo de imprensa",
+        href: "/conteudos/acervo",
+        description:
+          "O Sensei Carlos Rocha em jornais e revistas, de 1976 a 2001."
       }
     ]
   },

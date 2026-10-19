@@ -116,6 +116,11 @@ export default function DojoPage() {
               Os instrutores reúnem formação técnica sólida e títulos em
               competições oficiais.
             </p>
+            <p>
+              <Link className={sharedStyles.inlineLink} href="/conteudos/acervo">
+                Veja o Sensei Carlos Rocha na imprensa, de 1976 a 2001
+              </Link>
+            </p>
           </div>
           <div className={pageStyles.lineage}>
             <div className={pageStyles.lineageItem}>
