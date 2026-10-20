@@ -210,9 +210,7 @@ export default async function PressArticlePage({ params }: PressPageProps) {
                   ))}
                 </div>
               </>
-            ) : (
-              <h2>{isGallery ? "Sobre as fotos" : "Sobre este recorte"}</h2>
-            )}
+            ) : null}
 
             {article.captions?.length ? (
               <div className={styles.aside}>
@@ -220,17 +218,6 @@ export default async function PressArticlePage({ params }: PressPageProps) {
                 <ul>
                   {article.captions.map((caption) => (
                     <li key={caption}>{caption}</li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-
-            {article.notes?.length ? (
-              <div className={styles.aside}>
-                <h3>{hasTranscript ? "Notas da transcrição" : "Notas"}</h3>
-                <ul>
-                  {article.notes.map((note) => (
-                    <li key={note}>{note}</li>
                   ))}
                 </ul>
               </div>

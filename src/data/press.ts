@@ -32,7 +32,6 @@ export type PressArticle = {
   scans: PressScan[];
   transcript: PressTranscriptSection[];
   captions?: string[];
-  notes?: string[];
 };
 
 const scan = (
@@ -141,9 +140,6 @@ export const pressArticles: PressArticle[] = [
       "O presidente da Federação Paulista de Karatê, general Henrique Palmeiro D’Ávila, um entusiasta dos esportes.",
       "O professor Taketo Okuda, colhendo os resultados e o professor Mario Seki, principal organizador do certame.",
       "Yasutaka Tanaka, representante da Confederação Brasileira de Pugilismo, veio do Rio, colaborou e foi homenageado."
-    ],
-    notes: [
-      "O recorte original foi colado em partes, e duas linhas ficaram encobertas na emenda. Elas aparecem marcadas como [trecho ilegível no original]."
     ]
   },
   {
@@ -243,9 +239,6 @@ export const pressArticles: PressArticle[] = [
       "Dois ataques, duas esquivas. Carlão (de pé), no entrevero com Carlos Martinez (agora também convocado para a eliminatória do Pan), decidindo a disputa por equipes.",
       "O campeão, Carlos Rocha desferindo ágil mawashi-gueri no combate com José Roberto de Almeida.",
       "Eis a NKK, vice em kumitê e campeã em katá: de pé a partir da E. — Yasuhara (técnico), Osvaldo Oliveira (da equipe de katá), Virgílio, Carlão (katá e kumitê), Robson Maciel, Rui Tadaharu. Ajoelhados: Ricardo Marão (katá e kumitê), Ademar Bezerra, Paulo Storti e Wladimir Romic."
-    ],
-    notes: [
-      "A foto original da equipe NKK, do acervo pessoal do Sensei, é do mesmo momento registrado pelo jornal. A identificação dos atletas segue a legenda publicada na Gazeta."
     ]
   },
   {
@@ -297,10 +290,6 @@ export const pressArticles: PressArticle[] = [
           "A demonstração do Katá feita pelos atlétas brasileiros ali presentes mostraram ao bi-campeão a quantas andam o Karatê no Brasil e com a demonstração do nosso Carlão, ficou provado quanta raça existe dentro de um karateista brasileiro."
         ]
       }
-    ],
-    notes: [
-      "Os destaques em vermelho no nome de Carlos Rocha foram feitos no recorte do acervo, não no jornal original.",
-      "A página “Muitas lágrimas, no 10º Paulista de Karatê” existe no acervo só em baixa resolução. Por isso o texto dela não foi transcrito."
     ]
   },
   {
@@ -329,11 +318,7 @@ export const pressArticles: PressArticle[] = [
         "Recorte"
       )
     ],
-    transcript: [],
-    notes: [
-      "O recorte não identifica o jornal nem traz a data impressa. O mês e o ano seguem a identificação do acervo pessoal do Sensei.",
-      "A imagem disponível tem resolução baixa. O texto será transcrito quando houver uma digitalização melhor."
-    ]
+    transcript: []
   },
   {
     slug: "torneio-interestadual-1978-sao-paulo-campeao",
@@ -384,10 +369,6 @@ export const pressArticles: PressArticle[] = [
     ],
     captions: [
       "Yasuiuki Sasaki, técnico da equipe de São Paulo e preparador deste torneio."
-    ],
-    notes: [
-      "A publicação não aparece no recorte. O mês segue a data do torneio.",
-      "Transcrevemos a abertura, os resultados e a equipe paulista. As listas das outras federações e os nomes de árbitros ficaram de fora porque a resolução da imagem não permite leitura segura."
     ]
   },
   {
@@ -429,9 +410,6 @@ export const pressArticles: PressArticle[] = [
     ],
     captions: [
       "A equipe da Marathon prepara-se para disputar Paulista e Brasileiro."
-    ],
-    notes: [
-      "O recorte não traz a data impressa. O mês e o ano seguem a identificação do acervo pessoal do Sensei."
     ]
   },
   {
@@ -559,9 +537,6 @@ export const pressArticles: PressArticle[] = [
       "Esq. p/ dir.: Carlos Rocha, Massahiko Tanaka e Roberto Sant’anna (São José do Rio Preto - 1999).",
       "Esq. p/ dir.: atletas Ennio Vezzulli, Carlos Rocha e Ricardo Marão, em pé os professores Kawamura, Taketo Okuda e Tomeji Ito (equipe campeã kata no Camp. Bras. de 1977 - Ginásio do Ibirapuera - SP).",
       "Esq. p/ dir.: Sasaki, Tanaka, Assai e Taketo Okuda."
-    ],
-    notes: [
-      "A grafia dos nomes segue a revista, que alterna formas como Vezulli/Vezzulli e Okuda/“Takedo” Okuda."
     ]
   },
   {
@@ -614,9 +589,6 @@ export const pressArticles: PressArticle[] = [
           "“Ainda não senti um declínio muito forte, talvez por causa da técnica e da experiência que adquiri em todos esses anos de treinos. Posso dizer que me sinto até melhor do que nos meus 20 anos. Conforme a idade for chegando, vou adaptar meus treinos e torcer para que nunca tenha que parar totalmente. O caratê é a minha paixão”"
         ]
       }
-    ],
-    notes: [
-      "Transcrevemos o perfil do Sensei. O restante da reportagem trata de outros atletas e de orientações gerais de treino por faixa de idade."
     ]
   },
   {
@@ -731,9 +703,6 @@ export const pressArticles: PressArticle[] = [
           "3 - Oi-Geri: chute usado a partir da perna de trás com o deslocamento de um passo à frente."
         ]
       }
-    ],
-    notes: [
-      "As páginas digitalizadas não trazem o mês e o ano da edição. Por isso a data aparece só como edição nº 38."
     ]
   },
   {
@@ -823,10 +792,6 @@ export const pressArticles: PressArticle[] = [
           "Karatê só existe nesta dimensão, e não pode estar contido em nenhum livro. E isto não é teoria é prática infinita."
         ]
       }
-    ],
-    notes: [
-      "As páginas digitalizadas não trazem o mês e o ano da edição. Por isso a data aparece só como edição nº 39.",
-      "No acervo não há a página com as fotos 1 e 2 citadas no texto."
     ]
   },
   {
@@ -910,10 +875,7 @@ export const pressArticles: PressArticle[] = [
         "Treino no Mushinkan"
       )
     ],
-    transcript: [],
-    notes: [
-      "As legendas seguem a identificação dos arquivos do acervo. Datas, lugares e nomes serão completados conforme a confirmação do Sensei."
-    ]
+    transcript: []
   }
 ];
 
