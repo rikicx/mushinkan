@@ -118,7 +118,7 @@ export default function DojoPage() {
             </p>
             <p>
               <Link className={sharedStyles.inlineLink} href="/conteudos/acervo">
-                Veja o Sensei Carlos Rocha na imprensa, de 1976 a 2001
+                Veja a trajetória do Sensei Carlos Rocha na imprensa
               </Link>
             </p>
           </div>

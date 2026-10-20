@@ -316,7 +316,7 @@ export const navItems = [
         label: "Acervo de imprensa",
         href: "/conteudos/acervo",
         description:
-          "O Sensei Carlos Rocha em jornais e revistas, de 1976 a 2001."
+          "A trajetória do Sensei Carlos Rocha contada pela imprensa."
       }
     ]
   },

@@ -10,7 +10,7 @@ import styles from "./acervo.module.css";
 export const metadata = createPageMetadata({
   title: "Acervo de imprensa do Sensei Carlos Rocha",
   description:
-    "Reportagens de 1976 a 2001 sobre o Sensei Carlos Rocha e o Karate Shotokan JKA em São Paulo, com o recorte original e a transcrição completa.",
+    "A trajetória do Sensei Carlos Rocha contada pela imprensa: reportagens de 1976 a 2005 sobre um dos grandes nomes do Karate Shotokan JKA no Brasil.",
   path: "/conteudos/acervo"
 });
 
@@ -38,7 +38,7 @@ export default function PressArchivePage() {
       <PageHero
         eyebrow="Acervo de imprensa"
         title="O Sensei Carlos Rocha nos jornais e revistas."
-        text="Reportagens de 1976 a 2001 guardadas no acervo pessoal do Sensei. Cada página traz o recorte original e a transcrição completa do texto."
+        text="Do primeiro pódio paulista ao 7º Dan JKA: quase três décadas de imprensa contam a trajetória de um dos grandes nomes do Karate Shotokan no Brasil."
         mark="記"
       />
 
@@ -49,7 +49,7 @@ export default function PressArchivePage() {
               <li key={article.slug}>
                 <Link className={styles.timelineItem} href={pressHref(article.slug)}>
                   <span className={styles.timelineYear}>
-                    {article.year ?? article.outlet}
+                    {article.timelineLabel ?? article.year ?? article.outlet}
                   </span>
                   <Image
                     alt=""

@@ -16,11 +16,12 @@ export type PressTranscriptSection = {
 export type PressArticle = {
   slug: string;
   outlet: string;
-  outletType: "Jornal" | "Revista";
+  outletType: "Jornal" | "Revista" | "Acervo";
   edition?: string;
   dateLabel: string;
   isoDate?: string;
   year?: number;
+  timelineLabel?: string;
   headline: string;
   kicker?: string;
   byline?: string;
@@ -303,6 +304,93 @@ export const pressArticles: PressArticle[] = [
     ]
   },
   {
+    slug: "campeonato-infanto-juvenil-fpk-1978",
+    outlet: "Publicação não identificada",
+    outletType: "Jornal",
+    dateLabel: "Outubro de 1978",
+    isoDate: "1978-10",
+    year: 1978,
+    headline: "Infanto-juvenil foi um sucesso",
+    seoTitle: "Infanto-juvenil foi um sucesso (FPK, 1978)",
+    description:
+      "Recorte de 1978 sobre o 1º Campeonato Paulista Infanto-Juvenil da FPK, com Carlos Alberto Rocha entre os convocados para o Torneio Interestadual.",
+    summary:
+      "O nome de Carlos Alberto Rocha entre os convocados de São Paulo para o Torneio Interestadual.",
+    context: [
+      "O recorte registra o 1º Campeonato Paulista Infanto-Juvenil da Federação Paulista de Karatê, realizado no Pacaembu, e a convocação para a eliminatória do Torneio Interestadual daquele ano.",
+      "Entre os atletas chamados para defender São Paulo está Carlos Alberto Rocha, nome destacado no próprio recorte do acervo. Semanas depois, a equipe paulista seria campeã do Interestadual."
+    ],
+    scans: [
+      scan(
+        "campeonato-infanto-juvenil-fpk-1978",
+        720,
+        472,
+        "Recorte de jornal de 1978 com a manchete Infanto-juvenil foi um sucesso, fotos de lutas e o nome Carlos Alberto Rocha destacado na lista de convocados",
+        "Recorte"
+      )
+    ],
+    transcript: [],
+    notes: [
+      "O recorte não identifica o jornal nem traz a data impressa. O mês e o ano seguem a identificação do acervo pessoal do Sensei.",
+      "A imagem disponível tem resolução baixa. O texto será transcrito quando houver uma digitalização melhor."
+    ]
+  },
+  {
+    slug: "torneio-interestadual-1978-sao-paulo-campeao",
+    outlet: "Publicação não identificada",
+    outletType: "Revista",
+    edition: "Seção Karatê, página 37",
+    dateLabel: "Novembro de 1978",
+    isoDate: "1978-11",
+    year: 1978,
+    headline: "São Paulo campeão",
+    seoTitle: "São Paulo campeão: Torneio Interestadual de Karatê (1978)",
+    description:
+      "Recorte sobre o Torneio Interestadual de Karatê de 1978, no Pacaembu, vencido pela Federação Paulista com Carlos Rocha na equipe.",
+    summary:
+      "A Federação Paulista vence o Torneio Interestadual de 1978 em kumite e kata, com Carlos Rocha na equipe.",
+    context: [
+      "Em 11 de novembro de 1978, São Paulo venceu o Torneio Interestadual de Karatê no Ginásio do Pacaembu. A equipe paulista ficou em primeiro lugar tanto no kumite quanto no kata, diante de Rio de Janeiro, Bahia, Paraná e Distrito Federal.",
+      "Carlos Rocha integrava a equipe da Federação Paulista, que tinha Yasuyuki Sasaki como técnico."
+    ],
+    scans: [
+      scan(
+        "torneio-interestadual-1978-sao-paulo-campeao",
+        374,
+        479,
+        "Página de revista com o título São Paulo campeão, resultados do Torneio Interestadual de Karatê de 1978 e o nome Carlos Rocha destacado na lista da Federação Paulista",
+        "Página 37"
+      )
+    ],
+    transcript: [
+      {
+        paragraphs: [
+          "O difícil aconteceu. São Paulo foi realmente a equipe que obteve grande sucesso no Torneio Interestadual de Karatê, realizado no dia 11 de novembro de 1978 no Ginásio do Pacaembu, em São Paulo. Participaram desse Torneio quatro (4) Estados — São Paulo, Rio de Janeiro, Bahia, Paraná — e o Distrito Federal, com disputa de modalidade de Jiu-Kumite e Kata, tudo obedecendo estritamente ao regulamento da C.B.P. Infelizmente, porém, a competição individual não foi realizada devido à falta de iluminação no Ginásio, deliberação esta tomada pelas autoridades responsáveis, a fim de se evitarem acidentes entre os atletas."
+        ]
+      },
+      {
+        heading: "Resultado",
+        paragraphs: [
+          "Jiu-Kumite (Luta): 1º lugar: Federação Paulista de Karatê (SP); 2º lugar: Federação de Karatê do Estado do Rio de Janeiro (RJ); 3º lugar: Federação Baiana de Karatê (BA).",
+          "Kata (Formas): 1º lugar: Federação Paulista de Karatê (SP); 2º lugar: Federação de Karatê do Estado do Rio de Janeiro (RJ); 3º lugar: Federação Baiana de Karatê (BA)."
+        ]
+      },
+      {
+        heading: "Federação Paulista de Karatê",
+        paragraphs: [
+          "Chefe — Laerte Ferraz; Técnico — Yasuiuki Sasaki; atletas: Carlos Rocha, José Ricardo D’Elia, Antônio Gomes, Carlos Martinelli, Tadaharu Hayashi, Ademar Bezerra e Robson Maciel."
+        ]
+      }
+    ],
+    captions: [
+      "Yasuiuki Sasaki, técnico da equipe de São Paulo e preparador deste torneio."
+    ],
+    notes: [
+      "A publicação não aparece no recorte. O mês segue a data do torneio.",
+      "Transcrevemos a abertura, os resultados e a equipe paulista. As listas das outras federações e os nomes de árbitros ficaram de fora porque a resolução da imagem não permite leitura segura."
+    ]
+  },
+  {
     slug: "jornal-da-cidade-bauru-1998-carlos-rocha-visita-marathon",
     outlet: "Jornal da Cidade",
     outletType: "Jornal",
@@ -474,6 +562,61 @@ export const pressArticles: PressArticle[] = [
     ],
     notes: [
       "A grafia dos nomes segue a revista, que alterna formas como Vezulli/Vezzulli e Okuda/“Takedo” Okuda."
+    ]
+  },
+  {
+    slug: "go-outside-2005-fonte-da-juventude",
+    outlet: "Go Outside",
+    outletType: "Revista",
+    dateLabel: "Julho de 2005",
+    isoDate: "2005-07",
+    year: 2005,
+    headline: "Fonte da Juventude",
+    seoTitle: "Carlos Rocha, 55: Fonte da Juventude (Go Outside, 2005)",
+    description:
+      "O Sensei Carlos Rocha, aos 55 anos, na reportagem Fonte da Juventude da revista Go Outside sobre esporte e longevidade.",
+    summary:
+      "Aos 55 anos, o Sensei ganha página inteira numa reportagem sobre esporte e longevidade.",
+    context: [
+      "Na reportagem “Fonte da Juventude”, a revista Go Outside mostrou como o treino certo mantém o corpo forte década após década. Para representar os 50 anos, escolheu o Sensei Carlos Rocha, retratado em página inteira, em postura de karatê.",
+      "Aos 55 anos, ele dizia se sentir melhor do que aos 20 e resumia a própria trajetória numa frase: “O caratê é a minha paixão”."
+    ],
+    scans: [
+      scan(
+        "go-outside-2005-carlos-rocha",
+        1582,
+        2200,
+        "Página da revista Go Outside com o Sensei Carlos Rocha, aos 55 anos, em postura de karatê ao ar livre e o perfil Carlos Rocha, 55",
+        "Perfil do Sensei"
+      ),
+      scan(
+        "go-outside-2005-abertura",
+        1618,
+        2200,
+        "Página de abertura da reportagem Fonte da Juventude na revista Go Outside",
+        "Abertura da reportagem"
+      ),
+      scan(
+        "go-outside-2005-capa",
+        1697,
+        2142,
+        "Capa da revista Go Outside de julho de 2005 com a chamada Fonte da Juventude",
+        "Capa"
+      )
+    ],
+    transcript: [
+      {
+        heading: "Carlos Rocha, 55",
+        paragraphs: [
+          "Modalidade: caratê.",
+          "O que fez: pratica caratê desde os 17 anos. Há 15 anos começou a acompanhar o filho em treinos de bicicross. Gostou da brincadeira, começou a treinar e foi campeão brasileiro na modalidade aos 42 anos.",
+          "O que faz: uma a duas horas diárias de caratê.",
+          "“Ainda não senti um declínio muito forte, talvez por causa da técnica e da experiência que adquiri em todos esses anos de treinos. Posso dizer que me sinto até melhor do que nos meus 20 anos. Conforme a idade for chegando, vou adaptar meus treinos e torcer para que nunca tenha que parar totalmente. O caratê é a minha paixão”"
+        ]
+      }
+    ],
+    notes: [
+      "Transcrevemos o perfil do Sensei. O restante da reportagem trata de outros atletas e de orientações gerais de treino por faixa de idade."
     ]
   },
   {
@@ -684,6 +827,92 @@ export const pressArticles: PressArticle[] = [
     notes: [
       "As páginas digitalizadas não trazem o mês e o ano da edição. Por isso a data aparece só como edição nº 39.",
       "No acervo não há a página com as fotos 1 e 2 citadas no texto."
+    ]
+  },
+  {
+    slug: "fotos-do-acervo-sensei-carlos-rocha",
+    outlet: "Acervo pessoal do Sensei",
+    outletType: "Acervo",
+    dateLabel: "De 1974 aos dias de hoje",
+    timelineLabel: "Fotos",
+    headline: "Fotos do acervo",
+    seoTitle: "Fotos do acervo do Sensei Carlos Rocha",
+    description:
+      "Fotos do acervo pessoal do Sensei Carlos Rocha: campeonatos dos anos 1970, cursos, encontros com mestres e treinos no Mushinkan.",
+    summary:
+      "Campeonatos, cursos e encontros com mestres guardados pelo Sensei ao longo da carreira.",
+    context: [
+      "Além das reportagens, o acervo do Sensei Carlos Rocha guarda fotos de campeonatos, cursos e encontros que marcaram sua trajetória no Karate Shotokan.",
+      "Esta galeria reúne esses registros. Vamos completar as legendas aos poucos, com datas, lugares e nomes."
+    ],
+    scans: [
+      scan(
+        "acervo-campeonato-zona-sul-1974",
+        640,
+        470,
+        "Cerimônia do Campeonato Zona Sul de 1974, com atletas de quimono e a placa da equipe de São Paulo",
+        "Campeonato Zona Sul, 1974"
+      ),
+      scan(
+        "acervo-campeonato-brasileiro-1978-equipe-paulista",
+        640,
+        480,
+        "Equipe paulista perfilada no Campeonato Brasileiro de Karatê de 1978",
+        "Equipe paulista no Campeonato Brasileiro, 1978"
+      ),
+      scan(
+        "acervo-registro-1999",
+        1195,
+        776,
+        "Quatro karatecas de quimono preto em ginásio, foto com data impressa de 12 de novembro de 1999",
+        "Registro de 12/11/1999"
+      ),
+      scan(
+        "acervo-registro-competicao",
+        1176,
+        790,
+        "Karatecas de quimono branco sentados lado a lado em um ginásio de competição",
+        "Registro em competição"
+      ),
+      scan(
+        "acervo-curso-formula-academia-2006-1",
+        640,
+        480,
+        "Três instrutores lado a lado no tatame da Formula Academia, em 2006",
+        "Curso na Formula Academia, 2006"
+      ),
+      scan(
+        "acervo-curso-formula-academia-2006-2",
+        640,
+        480,
+        "Turma reunida no tatame da Formula Academia, em 2006",
+        "Turma do curso na Formula Academia, 2006"
+      ),
+      scan(
+        "acervo-cartaz-curso-2011",
+        400,
+        351,
+        "Cartaz de curso com o Sensei Carlos Rocha, 5º Dan JKA, realizado pela Associação Budô-Kan de Karatê",
+        "Cartaz de curso com o Sensei, 2011"
+      ),
+      scan(
+        "acervo-sensei-ricardo-delia-carlos-garitta",
+        400,
+        300,
+        "Sensei Carlos Rocha com Ricardo D’Elia e Carlos Garitta, de quimono, diante de um banner do dojo",
+        "Com Ricardo D’Elia e Carlos Garitta"
+      ),
+      scan(
+        "acervo-treino-mushinkan",
+        950,
+        300,
+        "Treino no dojo Mushinkan, com os banners do dojo ao fundo",
+        "Treino no Mushinkan"
+      )
+    ],
+    transcript: [],
+    notes: [
+      "As legendas seguem a identificação dos arquivos do acervo. Datas, lugares e nomes serão completados conforme a confirmação do Sensei."
     ]
   }
 ];

@@ -41,7 +41,7 @@ export default function ContentPage() {
           <SectionHeading
             eyebrow="Acervo de imprensa"
             title="O Sensei Carlos Rocha nos jornais e revistas."
-            text="Reportagens de 1976 a 2001, com o recorte original e a transcrição completa."
+            text="Quase três décadas de reportagens sobre a trajetória do Sensei, de campeão paulista a referência do Shotokan JKA no Brasil."
             action={
               <ButtonLink href="/conteudos/acervo" variant="secondary">
                 Ver acervo completo
