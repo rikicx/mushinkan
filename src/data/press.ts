@@ -172,6 +172,13 @@ export const pressArticles: PressArticle[] = [
         2200,
         "Página de A Gazeta Esportiva de 16 de maio de 1978 com a manchete Carlão, duplamente campeão e fotos do Campeonato Paulista de Karatê",
         "Página completa"
+      ),
+      scan(
+        "gazeta-esportiva-1978-equipe-nkk-foto-original",
+        720,
+        437,
+        "Equipe NKK no Campeonato Paulista de 1978. Em pé, a partir da esquerda: Yasuhara (técnico), Osvaldo Oliveira, Virgílio, Carlão, Robson Maciel e Rui Tadaharu. Ajoelhados: Ricardo Marão, Ademar Bezerra, Paulo Storti e Wladimir Romic",
+        "Foto original da equipe NKK (acervo)"
       )
     ],
     transcript: [
@@ -235,6 +242,9 @@ export const pressArticles: PressArticle[] = [
       "Dois ataques, duas esquivas. Carlão (de pé), no entrevero com Carlos Martinez (agora também convocado para a eliminatória do Pan), decidindo a disputa por equipes.",
       "O campeão, Carlos Rocha desferindo ágil mawashi-gueri no combate com José Roberto de Almeida.",
       "Eis a NKK, vice em kumitê e campeã em katá: de pé a partir da E. — Yasuhara (técnico), Osvaldo Oliveira (da equipe de katá), Virgílio, Carlão (katá e kumitê), Robson Maciel, Rui Tadaharu. Ajoelhados: Ricardo Marão (katá e kumitê), Ademar Bezerra, Paulo Storti e Wladimir Romic."
+    ],
+    notes: [
+      "A foto original da equipe NKK, do acervo pessoal do Sensei, é do mesmo momento registrado pelo jornal. A identificação dos atletas segue a legenda publicada na Gazeta."
     ]
   },
   {
